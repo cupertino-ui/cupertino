@@ -357,6 +357,15 @@
       ]
     },
     {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "description": "Apple HIG empty-state pattern — large muted icon, 15pt title, 13pt description, action button slot.",
+      "files": [
+        { "path": "registry/empty/empty.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "spinner",
       "type": "registry:ui",
       "title": "Spinner",
