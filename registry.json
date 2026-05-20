@@ -357,6 +357,16 @@
       ]
     },
     {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "description": "Apple HIG macOS-style menubar — rounded-xl container, rounded-2xl dropdowns, 15pt items, uppercase 11px section labels.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/menubar/menubar.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "context-menu",
       "type": "registry:ui",
       "title": "Context Menu",
