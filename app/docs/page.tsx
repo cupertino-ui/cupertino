@@ -31,6 +31,11 @@ import {
 } from "@/components/ui/tooltip";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
@@ -116,6 +121,7 @@ export default function DocsPage() {
         <CollapsibleDoc />
         <DialogDoc />
         <DropdownMenuDoc />
+        <HoverCardDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -621,6 +627,50 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function HoverCardDoc() {
+  return (
+    <Showcase
+      id="hover-card"
+      name="Hover Card"
+      description="rounded-2xl popover surface, 13pt text, shadow-xl. Appears on hover after a short delay — ideal for user profiles and rich previews."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/hover-card.json"
+      code={`import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card"
+
+<HoverCard>
+  <HoverCardTrigger asChild>
+    <Button variant="link">@shadcn</Button>
+  </HoverCardTrigger>
+  <HoverCardContent>
+    <p>Creator of shadcn/ui.</p>
+  </HoverCardContent>
+</HoverCard>`}
+      preview={
+        <HoverCard>
+          <HoverCardTrigger asChild>
+            <Button variant="link">@shadcn</Button>
+          </HoverCardTrigger>
+          <HoverCardContent>
+            <div className="flex gap-3">
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div className="space-y-1">
+                <p className="text-[14px] font-semibold tracking-tight">
+                  @shadcn
+                </p>
+                <p className="text-[12px] text-muted-foreground leading-relaxed">
+                  Creator of shadcn/ui. Building in public.
+                </p>
+              </div>
+            </div>
+          </HoverCardContent>
+        </HoverCard>
+      }
+    />
+  );
+}
+
 function BadgeDoc() {
   return (
     <Showcase
@@ -1027,6 +1077,7 @@ function OnThisPage() {
     { label: "Collapsible", href: "#collapsible" },
     { label: "Dialog", href: "#dialog" },
     { label: "Dropdown Menu", href: "#dropdown-menu" },
+    { label: "Hover Card", href: "#hover-card" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },

@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "description": "Apple HIG hover card — rounded-2xl, 13pt text, shadow-xl, 300ms open delay.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/hover-card/hover-card.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "dropdown-menu",
       "type": "registry:ui",
       "title": "Dropdown Menu",
