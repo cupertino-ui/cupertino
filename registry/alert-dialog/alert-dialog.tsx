@@ -158,6 +158,7 @@ function AlertDialogAction({
     <Button variant={variant} size={size} asChild className={cn("flex-1 rounded-none last:rounded-br-3xl first:rounded-bl-3xl h-11 text-[17px]", className)}>
       <AlertDialogPrimitive.Action
         data-slot="alert-dialog-action"
+        {...props}
       />
     </Button>
   )
@@ -174,6 +175,7 @@ function AlertDialogCancel({
     <Button variant={variant} size={size} asChild className={cn("flex-1 rounded-none last:rounded-br-3xl first:rounded-bl-3xl h-11 text-[17px]", className)}>
       <AlertDialogPrimitive.Cancel
         data-slot="alert-dialog-cancel"
+        {...props}
       />
     </Button>
   )
