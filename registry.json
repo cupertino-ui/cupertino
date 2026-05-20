@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Apple HIG toggle button — 44pt, rounded-xl, primary fill when on, scale-press, default and outline variants.",
+      "dependencies": ["class-variance-authority", "radix-ui"],
+      "files": [
+        { "path": "registry/toggle/toggle.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",

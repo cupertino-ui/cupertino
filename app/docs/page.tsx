@@ -36,6 +36,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
+import { Toggle } from "@/components/ui/toggle";
 import {
   Select,
   SelectContent,
@@ -161,6 +162,7 @@ export default function DocsPage() {
         <SkeletonDoc />
         <SliderDoc />
         <TextareaDoc />
+        <ToggleDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -999,6 +1001,33 @@ function TextareaDoc() {
   );
 }
 
+function ToggleDoc() {
+  return (
+    <Showcase
+      id="toggle"
+      name="Toggle"
+      description="44pt, rounded-xl. Primary fill when pressed-on; transparent when off. Default and outline variants, scale-press feedback."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/toggle.json"
+      code={`import { Toggle } from "@/components/ui/toggle"
+
+<Toggle>Bold</Toggle>
+<Toggle variant="outline" defaultPressed>Italic</Toggle>`}
+      preview={
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Toggle>Default</Toggle>
+          <Toggle defaultPressed>Pressed</Toggle>
+          <Toggle variant="outline">Outline</Toggle>
+          <Toggle variant="outline" defaultPressed>
+            On
+          </Toggle>
+          <Toggle size="sm">Small</Toggle>
+          <Toggle disabled>Disabled</Toggle>
+        </div>
+      }
+    />
+  );
+}
+
 function BadgeDoc() {
   return (
     <Showcase
@@ -1415,6 +1444,7 @@ function OnThisPage() {
     { label: "Skeleton", href: "#skeleton" },
     { label: "Slider", href: "#slider" },
     { label: "Textarea", href: "#textarea" },
+    { label: "Toggle", href: "#toggle" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },
