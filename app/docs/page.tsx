@@ -140,8 +140,57 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+} from "@/components/ui/input-group";
+import { SearchIcon, AtSignIcon, UserIcon, BellIcon, StarIcon, ChevronRightIcon } from "lucide-react";
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+} from "@/components/ui/button-group";
+import {
+  Field,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldLabel,
+} from "@/components/ui/field";
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/ui/item";
+import {
+  NativeSelect,
+  NativeSelectOption,
+} from "@/components/ui/native-select";
+import {
+  TypographyBlockquote,
+  TypographyH1,
+  TypographyH2,
+  TypographyH3,
+  TypographyH4,
+  TypographyInlineCode,
+  TypographyLarge,
+  TypographyLead,
+  TypographyList,
+  TypographyMuted,
+  TypographyP,
+  TypographySmall,
+} from "@/components/ui/typography";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ResizableDemo } from "@/app/_components/resizable-demo";
+import { SidebarDemo } from "@/app/_components/sidebar-demo";
+import { ComboboxDemo } from "@/app/_components/combobox-demo";
 import {
   Table,
   TableBody,
@@ -187,6 +236,63 @@ import {
 } from "@/components/ui/navigation-menu";
 
 export default function DocsPage() {
+  const componentDocs = [
+    AccordionDoc,
+    AlertDoc,
+    AlertDialogDoc,
+    AvatarDoc,
+    BreadcrumbDoc,
+    CheckboxDoc,
+    CollapsibleDoc,
+    DialogDoc,
+    DropdownMenuDoc,
+    HoverCardDoc,
+    PaginationDoc,
+    PopoverDoc,
+    ProgressDoc,
+    RadioGroupDoc,
+    ScrollAreaDoc,
+    SelectDoc,
+    SkeletonDoc,
+    SliderDoc,
+    TextareaDoc,
+    ToggleDoc,
+    ToggleGroupDoc,
+    BadgeDoc,
+    ButtonDoc,
+    CardDoc,
+    InputDoc,
+    InputGroupDoc,
+    KbdDoc,
+    LabelDoc,
+    SeparatorDoc,
+    SheetDoc,
+    SwitchDoc,
+    TabsDoc,
+    TooltipDoc,
+    CarouselDoc,
+    EmptyDoc,
+    SpinnerDoc,
+    TableDoc,
+    ResizableDoc,
+    AspectRatioDoc,
+    InputOTPDoc,
+    CalendarDoc,
+    DrawerDoc,
+    NavigationMenuDoc,
+    MenubarDoc,
+    ContextMenuDoc,
+    CommandDoc,
+    SonnerDoc,
+    ButtonGroupDoc,
+    FieldDoc,
+    ItemDoc,
+    NativeSelectDoc,
+    TypographyDoc,
+    ComboboxDoc,
+    SidebarDoc,
+  ].sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <>
       <Introduction />
@@ -200,52 +306,9 @@ export default function DocsPage() {
         Components
       </h2>
       <div className="mt-6 space-y-16">
-        <AccordionDoc />
-        <AlertDoc />
-        <AlertDialogDoc />
-        <AvatarDoc />
-        <BreadcrumbDoc />
-        <CheckboxDoc />
-        <CollapsibleDoc />
-        <DialogDoc />
-        <DropdownMenuDoc />
-        <HoverCardDoc />
-        <PaginationDoc />
-        <PopoverDoc />
-        <ProgressDoc />
-        <RadioGroupDoc />
-        <ScrollAreaDoc />
-        <SelectDoc />
-        <SkeletonDoc />
-        <SliderDoc />
-        <TextareaDoc />
-        <ToggleDoc />
-        <ToggleGroupDoc />
-        <BadgeDoc />
-        <ButtonDoc />
-        <CardDoc />
-        <InputDoc />
-        <KbdDoc />
-        <LabelDoc />
-        <SeparatorDoc />
-        <SheetDoc />
-        <SwitchDoc />
-        <TabsDoc />
-        <TooltipDoc />
-        <CarouselDoc />
-        <EmptyDoc />
-        <SpinnerDoc />
-        <TableDoc />
-        <ResizableDoc />
-        <AspectRatioDoc />
-        <InputOTPDoc />
-        <CalendarDoc />
-        <DrawerDoc />
-        <NavigationMenuDoc />
-        <MenubarDoc />
-        <ContextMenuDoc />
-        <CommandDoc />
-        <SonnerDoc />
+        {componentDocs.map((ComponentDoc) => (
+          <ComponentDoc key={ComponentDoc.name} />
+        ))}
       </div>
 
       <OnThisPage />
@@ -1251,6 +1314,59 @@ import { Label } from "@/components/ui/label"
   );
 }
 
+function InputGroupDoc() {
+  return (
+    <Showcase
+      id="input-group"
+      name="Input Group"
+      description="Apple HIG input group — composes input with leading/trailing addons (icons, text, buttons, kbd). Shared rounded-xl shell, single focus ring across the group."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/input-group.json"
+      code={`import { InputGroup, InputGroupInput, InputGroupAddon, InputGroupText, InputGroupButton } from "@/components/ui/input-group"
+import { SearchIcon } from "lucide-react"
+
+<InputGroup>
+  <InputGroupAddon>
+    <SearchIcon />
+  </InputGroupAddon>
+  <InputGroupInput placeholder="Search..." />
+  <InputGroupAddon align="inline-end">
+    <Kbd>K</Kbd>
+  </InputGroupAddon>
+</InputGroup>`}
+      preview={
+        <div className="mx-auto flex w-full max-w-sm flex-col gap-3">
+          <InputGroup>
+            <InputGroupAddon>
+              <SearchIcon />
+            </InputGroupAddon>
+            <InputGroupInput placeholder="Search components" />
+            <InputGroupAddon align="inline-end">
+              <Kbd>⌘K</Kbd>
+            </InputGroupAddon>
+          </InputGroup>
+          <InputGroup>
+            <InputGroupAddon>
+              <AtSignIcon />
+            </InputGroupAddon>
+            <InputGroupInput placeholder="username" />
+            <InputGroupAddon align="inline-end">
+              <InputGroupText>@cupertino.dev</InputGroupText>
+            </InputGroupAddon>
+          </InputGroup>
+          <InputGroup>
+            <InputGroupInput placeholder="Enter URL" />
+            <InputGroupAddon align="inline-end">
+              <InputGroupButton size="sm" variant="default">
+                Apply
+              </InputGroupButton>
+            </InputGroupAddon>
+          </InputGroup>
+        </div>
+      }
+    />
+  );
+}
+
 function KbdDoc() {
   return (
     <Showcase
@@ -2079,6 +2195,296 @@ toast.info("Update available.")`}
   );
 }
 
+function ButtonGroupDoc() {
+  return (
+    <Showcase
+      id="button-group"
+      name="Button Group"
+      description="Apple HIG segmented button cluster — shared rounded-xl shell, dividers between members, supports separators and label addons."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/button-group.json"
+      code={`import { ButtonGroup, ButtonGroupSeparator, ButtonGroupText } from "@/components/ui/button-group"
+import { Button } from "@/components/ui/button"
+
+<ButtonGroup>
+  <Button variant="outline">Day</Button>
+  <Button variant="outline">Week</Button>
+  <Button variant="outline">Month</Button>
+</ButtonGroup>`}
+      preview={
+        <div className="flex flex-col items-center gap-5">
+          <ButtonGroup>
+            <Button variant="outline">Day</Button>
+            <Button variant="outline">Week</Button>
+            <Button variant="outline">Month</Button>
+          </ButtonGroup>
+          <ButtonGroup>
+            <Button variant="outline">Copy</Button>
+            <ButtonGroupSeparator />
+            <Button variant="outline">Paste</Button>
+            <ButtonGroupSeparator />
+            <Button variant="outline">Cut</Button>
+          </ButtonGroup>
+          <ButtonGroup>
+            <ButtonGroupText>https://</ButtonGroupText>
+            <Input className="rounded-l-none" placeholder="cupertino-ui.vercel.app" />
+            <Button>Go</Button>
+          </ButtonGroup>
+        </div>
+      }
+    />
+  );
+}
+
+function FieldDoc() {
+  return (
+    <Showcase
+      id="field"
+      name="Field"
+      description="Apple HIG form field wrapper — composes label, control, description, and error in a single semantic group with consistent spacing."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/field.json"
+      code={`import { Field, FieldLabel, FieldDescription, FieldError, FieldGroup } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+
+<FieldGroup>
+  <Field>
+    <FieldLabel htmlFor="email">Email</FieldLabel>
+    <Input id="email" type="email" placeholder="name@example.com" />
+    <FieldDescription>We&#39;ll never share your email.</FieldDescription>
+  </Field>
+  <Field data-invalid>
+    <FieldLabel htmlFor="pw">Password</FieldLabel>
+    <Input id="pw" type="password" aria-invalid />
+    <FieldError>Must be at least 8 characters.</FieldError>
+  </Field>
+</FieldGroup>`}
+      preview={
+        <FieldGroup className="mx-auto w-full max-w-sm">
+          <Field>
+            <FieldLabel htmlFor="field-email">Email</FieldLabel>
+            <Input
+              id="field-email"
+              type="email"
+              placeholder="name@example.com"
+            />
+            <FieldDescription>
+              We&apos;ll never share your email.
+            </FieldDescription>
+          </Field>
+          <Field data-invalid>
+            <FieldLabel htmlFor="field-pw">Password</FieldLabel>
+            <Input id="field-pw" type="password" aria-invalid />
+            <FieldError>Must be at least 8 characters.</FieldError>
+          </Field>
+        </FieldGroup>
+      }
+    />
+  );
+}
+
+function ItemDoc() {
+  return (
+    <Showcase
+      id="item"
+      name="Item"
+      description="Apple HIG list row — leading media slot (icon or image), title + description content, trailing actions, three sizes."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/item.json"
+      code={`import { Item, ItemMedia, ItemContent, ItemTitle, ItemDescription, ItemActions, ItemGroup } from "@/components/ui/item"
+import { Button } from "@/components/ui/button"
+import { BellIcon } from "lucide-react"
+
+<ItemGroup>
+  <Item variant="outline">
+    <ItemMedia variant="icon"><BellIcon /></ItemMedia>
+    <ItemContent>
+      <ItemTitle>Notifications</ItemTitle>
+      <ItemDescription>Get notified when something happens.</ItemDescription>
+    </ItemContent>
+    <ItemActions>
+      <Button size="sm" variant="outline">Manage</Button>
+    </ItemActions>
+  </Item>
+</ItemGroup>`}
+      preview={
+        <ItemGroup className="mx-auto w-full max-w-md">
+          <Item variant="outline">
+            <ItemMedia variant="icon">
+              <BellIcon />
+            </ItemMedia>
+            <ItemContent>
+              <ItemTitle>Notifications</ItemTitle>
+              <ItemDescription>
+                Get notified when something happens.
+              </ItemDescription>
+            </ItemContent>
+            <ItemActions>
+              <Button size="sm" variant="outline">
+                Manage
+              </Button>
+            </ItemActions>
+          </Item>
+          <Item variant="outline">
+            <ItemMedia variant="icon">
+              <StarIcon />
+            </ItemMedia>
+            <ItemContent>
+              <ItemTitle>Favorites</ItemTitle>
+              <ItemDescription>
+                Quick access to items you&apos;ve starred.
+              </ItemDescription>
+            </ItemContent>
+            <ItemActions>
+              <ChevronRightIcon className="size-4 text-muted-foreground" />
+            </ItemActions>
+          </Item>
+          <Item variant="muted" size="sm">
+            <ItemMedia variant="icon">
+              <UserIcon />
+            </ItemMedia>
+            <ItemContent>
+              <ItemTitle>Profile</ItemTitle>
+            </ItemContent>
+            <ItemActions>
+              <ChevronRightIcon className="size-4 text-muted-foreground" />
+            </ItemActions>
+          </Item>
+        </ItemGroup>
+      }
+    />
+  );
+}
+
+function NativeSelectDoc() {
+  return (
+    <Showcase
+      id="native-select"
+      name="Native Select"
+      description="Apple HIG native select — uses the platform's native dropdown for accessibility, styled to match Input. Best for mobile and form-heavy contexts."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/native-select.json"
+      code={`import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select"
+
+<NativeSelect>
+  <NativeSelectOption value="apple">Apple</NativeSelectOption>
+  <NativeSelectOption value="banana">Banana</NativeSelectOption>
+  <NativeSelectOption value="cherry">Cherry</NativeSelectOption>
+</NativeSelect>`}
+      preview={
+        <div className="mx-auto w-full max-w-sm">
+          <NativeSelect defaultValue="banana" className="w-full">
+            <NativeSelectOption value="apple">Apple</NativeSelectOption>
+            <NativeSelectOption value="banana">Banana</NativeSelectOption>
+            <NativeSelectOption value="cherry">Cherry</NativeSelectOption>
+            <NativeSelectOption value="durian">Durian</NativeSelectOption>
+          </NativeSelect>
+        </div>
+      }
+    />
+  );
+}
+
+function TypographyDoc() {
+  return (
+    <Showcase
+      id="typography"
+      name="Typography"
+      description="Apple HIG type scale — SF Pro-style sizing (40/28/22/17/15/13pt), tight tracking on display sizes, semibold for headings."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/typography.json"
+      code={`import { TypographyH1, TypographyH2, TypographyP, TypographyLead, TypographyMuted, TypographyInlineCode } from "@/components/ui/typography"
+
+<TypographyH1>The quick brown fox</TypographyH1>
+<TypographyLead>Jumps over the lazy dog.</TypographyLead>
+<TypographyP>Paragraph at 15pt with relaxed leading.</TypographyP>
+<TypographyMuted>Secondary 13pt muted text.</TypographyMuted>`}
+      preview={
+        <div className="mx-auto w-full max-w-xl space-y-5">
+          <TypographyH1>The quick brown fox</TypographyH1>
+          <TypographyH2>Jumps over the lazy dog</TypographyH2>
+          <TypographyH3>Section heading</TypographyH3>
+          <TypographyH4>Subsection</TypographyH4>
+          <TypographyLead>
+            A lead paragraph introduces a section with lighter weight and
+            tighter tracking.
+          </TypographyLead>
+          <TypographyP>
+            Body copy renders at 15pt with relaxed line height for readable
+            paragraphs. Inline code looks like{" "}
+            <TypographyInlineCode>npm install</TypographyInlineCode>.
+          </TypographyP>
+          <TypographyLarge>Large accent text</TypographyLarge>
+          <TypographySmall>Small caption text</TypographySmall>
+          <TypographyMuted>
+            Muted secondary text for hints and descriptions.
+          </TypographyMuted>
+          <TypographyBlockquote>
+            &ldquo;Design is not just what it looks like and feels like. Design
+            is how it works.&rdquo; — Steve Jobs
+          </TypographyBlockquote>
+          <TypographyList>
+            <li>First list item with proper marker</li>
+            <li>Second list item with relaxed leading</li>
+            <li>Third list item</li>
+          </TypographyList>
+        </div>
+      }
+    />
+  );
+}
+
+function ComboboxDoc() {
+  return (
+    <Showcase
+      id="combobox"
+      name="Combobox"
+      description="Apple HIG combobox — autocomplete input dengan list saran. Built on base-ui combobox + Input Group shell."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/combobox.json"
+      code={`import { Combobox, ComboboxInput, ComboboxContent, ComboboxList, ComboboxItem, ComboboxEmpty } from "@/components/ui/combobox"
+
+const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"] as const
+
+<Combobox items={frameworks}>
+  <ComboboxInput placeholder="Select a framework..." />
+  <ComboboxContent>
+    <ComboboxEmpty>No framework found.</ComboboxEmpty>
+    <ComboboxList>
+      {(item) => (
+        <ComboboxItem key={item} value={item}>
+          {item}
+        </ComboboxItem>
+      )}
+    </ComboboxList>
+  </ComboboxContent>
+</Combobox>`}
+      preview={<ComboboxDemo />}
+    />
+  );
+}
+
+function SidebarDoc() {
+  return (
+    <Showcase
+      id="sidebar"
+      name="Sidebar"
+      description="Apple HIG sidebar — collapsible app shell with grouped items, search slot, mobile sheet variant. Large API; install the component for the full surface."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/sidebar.json"
+      code={`import { SidebarProvider, Sidebar, SidebarContent, SidebarGroup, SidebarMenu, SidebarMenuButton } from "@/components/ui/sidebar"
+import { MailIcon, BellIcon } from "lucide-react"
+
+<SidebarProvider>
+  <Sidebar>
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarMenu>
+          <SidebarMenuButton><MailIcon /> Inbox</SidebarMenuButton>
+          <SidebarMenuButton><BellIcon /> Notifications</SidebarMenuButton>
+        </SidebarMenu>
+      </SidebarGroup>
+    </SidebarContent>
+  </Sidebar>
+</SidebarProvider>`}
+      preview={<SidebarDemo />}
+    />
+  );
+}
+
 function LabeledSwitch({
   label,
   ...props
@@ -2142,6 +2548,14 @@ function OnThisPage() {
     { label: "Context Menu", href: "#context-menu" },
     { label: "Command", href: "#command" },
     { label: "Sonner", href: "#sonner" },
+    { label: "Input Group", href: "#input-group" },
+    { label: "Button Group", href: "#button-group" },
+    { label: "Field", href: "#field" },
+    { label: "Item", href: "#item" },
+    { label: "Native Select", href: "#native-select" },
+    { label: "Typography", href: "#typography" },
+    { label: "Combobox", href: "#combobox" },
+    { label: "Sidebar", href: "#sidebar" },
   ];
   return (
     <aside className="fixed top-24 right-8 hidden w-52 xl:block">
