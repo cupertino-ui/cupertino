@@ -31,6 +31,15 @@ import {
 } from "@/components/ui/tooltip";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
+import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
@@ -122,6 +131,7 @@ export default function DocsPage() {
         <DialogDoc />
         <DropdownMenuDoc />
         <HoverCardDoc />
+        <PaginationDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -671,6 +681,52 @@ function HoverCardDoc() {
   );
 }
 
+function PaginationDoc() {
+  return (
+    <Showcase
+      id="pagination"
+      name="Pagination"
+      description="Active page uses primary pill, ghosts for others. 44pt touch targets. Previous/Next show text on larger screens."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/pagination.json"
+      code={`import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext, PaginationEllipsis } from "@/components/ui/pagination"
+
+<Pagination>
+  <PaginationContent>
+    <PaginationItem><PaginationPrevious href="#" /></PaginationItem>
+    <PaginationItem><PaginationLink href="#" isActive>1</PaginationLink></PaginationItem>
+    <PaginationItem><PaginationNext href="#" /></PaginationItem>
+  </PaginationContent>
+</Pagination>`}
+      preview={
+        <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">1</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#" isActive>
+                2
+              </PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">3</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationEllipsis />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext href="#" />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      }
+    />
+  );
+}
+
 function BadgeDoc() {
   return (
     <Showcase
@@ -1078,6 +1134,7 @@ function OnThisPage() {
     { label: "Dialog", href: "#dialog" },
     { label: "Dropdown Menu", href: "#dropdown-menu" },
     { label: "Hover Card", href: "#hover-card" },
+    { label: "Pagination", href: "#pagination" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },

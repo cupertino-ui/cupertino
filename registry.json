@@ -4,6 +4,17 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Apple HIG pagination — pill active page in primary, ghost ghosts, 44pt touch targets.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        { "path": "registry/pagination/pagination.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "hover-card",
       "type": "registry:ui",
       "title": "Hover Card",
