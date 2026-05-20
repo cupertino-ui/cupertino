@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Apple HIG accordion — grouped list style, 44pt touch targets, smooth chevron rotation, drop-in replacement for shadcn Accordion.",
+      "dependencies": ["radix-ui", "lucide-react"],
+      "files": [
+        { "path": "registry/accordion/accordion.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
