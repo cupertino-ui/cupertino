@@ -7,13 +7,54 @@
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
-      "description": "Apple HIG button — pill shape, scale press, single accent.",
-      "dependencies": ["class-variance-authority", "@radix-ui/react-slot"],
+      "description": "Apple HIG button — pill shape, 44pt minimum, scale press, drop-in replacement for shadcn Button.",
+      "dependencies": ["class-variance-authority", "radix-ui"],
       "files": [
         {
-          "path": "registry/new-york/button/button.tsx",
+          "path": "registry/button/button.tsx",
           "type": "registry:component",
           "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Apple HIG toggle — 51×31pt iOS dimensions, smooth thumb, drop-in replacement for shadcn Switch.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        {
+          "path": "registry/switch/switch.tsx",
+          "type": "registry:component",
+          "target": "components/ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Apple HIG badge — full pill, semibold, destructive uses Apple system red, drop-in replacement for shadcn Badge.",
+      "dependencies": ["class-variance-authority", "radix-ui"],
+      "files": [
+        {
+          "path": "registry/badge/badge.tsx",
+          "type": "registry:component",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Apple HIG card — rounded-2xl, soft shadow, subtle ring, drop-in replacement for shadcn Card.",
+      "files": [
+        {
+          "path": "registry/card/card.tsx",
+          "type": "registry:component",
+          "target": "components/ui/card.tsx"
         }
       ]
     }
