@@ -49,10 +49,10 @@ function Hero() {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button size="lg" asChild>
-            <a href="/docs">Read the documentation</a>
+            <a href="/docs">Get started</a>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <a href="/docs#components">Browse components</a>
+            <a href="/docs#components">Components</a>
           </Button>
         </div>
       </div>
@@ -183,12 +183,26 @@ function ComponentPreviews() {
             <Card className="w-full max-w-xs">
               <CardHeader>
                 <CardTitle>Notifications</CardTitle>
-                <CardDescription>Push, email, sound.</CardDescription>
+                <CardDescription>Manage how you receive alerts.</CardDescription>
               </CardHeader>
-              <CardContent className="flex items-center justify-between pt-0">
-                <span className="text-[13px]">Push</span>
-                <Switch size="sm" defaultChecked />
+              <CardContent className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span>Push notifications</span>
+                  <Switch defaultChecked />
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Email</span>
+                  <Switch />
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Sound</span>
+                  <Switch defaultChecked />
+                </div>
               </CardContent>
+              <CardFooter className="gap-2">
+                <Button variant="outline" className="flex-1">Cancel</Button>
+                <Button className="flex-1">Save</Button>
+              </CardFooter>
             </Card>
           </PreviewTile>
 
