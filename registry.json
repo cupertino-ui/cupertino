@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Apple HIG collapsible — headless expand/collapse primitive, styled by the consumer.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/collapsible/collapsible.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",

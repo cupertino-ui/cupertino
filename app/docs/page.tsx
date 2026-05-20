@@ -31,6 +31,11 @@ import {
 } from "@/components/ui/tooltip";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import {
   Breadcrumb,
   BreadcrumbEllipsis,
   BreadcrumbItem,
@@ -89,6 +94,7 @@ export default function DocsPage() {
         <AvatarDoc />
         <BreadcrumbDoc />
         <CheckboxDoc />
+        <CollapsibleDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -445,6 +451,52 @@ function CheckboxDoc() {
             <span>Disabled</span>
           </label>
         </div>
+      }
+    />
+  );
+}
+
+function CollapsibleDoc() {
+  return (
+    <Showcase
+      id="collapsible"
+      name="Collapsible"
+      description="Headless expand/collapse primitive. Wire any trigger and content — pair with Button and the accordion pattern for a HIG feel."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/collapsible.json"
+      code={`import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible"
+import { Button } from "@/components/ui/button"
+
+<Collapsible>
+  <CollapsibleTrigger asChild>
+    <Button variant="outline">Toggle</Button>
+  </CollapsibleTrigger>
+  <CollapsibleContent>Hidden content</CollapsibleContent>
+</Collapsible>`}
+      preview={
+        <Collapsible className="w-full max-w-xs space-y-2">
+          <div className="flex items-center justify-between">
+            <span className="text-[15px] font-medium">Repositories</span>
+            <CollapsibleTrigger asChild>
+              <Button variant="ghost" size="icon-sm">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="size-4">
+                  <path d="M4 6l4 4 4-4" />
+                </svg>
+                <span className="sr-only">Toggle</span>
+              </Button>
+            </CollapsibleTrigger>
+          </div>
+          <div className="rounded-xl border border-border px-4 py-3 text-[13px] text-muted-foreground">
+            @radix-ui/react-collapsible
+          </div>
+          <CollapsibleContent className="space-y-2">
+            <div className="rounded-xl border border-border px-4 py-3 text-[13px] text-muted-foreground">
+              @radix-ui/react-dialog
+            </div>
+            <div className="rounded-xl border border-border px-4 py-3 text-[13px] text-muted-foreground">
+              @radix-ui/react-dropdown-menu
+            </div>
+          </CollapsibleContent>
+        </Collapsible>
       }
     />
   );
@@ -853,6 +905,7 @@ function OnThisPage() {
     { label: "Avatar", href: "#avatar" },
     { label: "Breadcrumb", href: "#breadcrumb" },
     { label: "Checkbox", href: "#checkbox" },
+    { label: "Collapsible", href: "#collapsible" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },
