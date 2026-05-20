@@ -357,6 +357,16 @@
       ]
     },
     {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "description": "Apple HIG right-click context menu — rounded-2xl, 15pt items, uppercase 11px labels. Mirrors dropdown-menu styling.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/context-menu/context-menu.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "input-group",
       "type": "registry:ui",
       "title": "Input Group",
