@@ -25,17 +25,6 @@ import {
 export function CommandDemo() {
   const [open, setOpen] = React.useState(false)
 
-  React.useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((v) => !v)
-      }
-    }
-    document.addEventListener("keydown", handler)
-    return () => document.removeEventListener("keydown", handler)
-  }, [])
-
   return (
     <div className="flex flex-col items-center gap-4">
       <Button variant="outline" onClick={() => setOpen(true)} className="gap-2">

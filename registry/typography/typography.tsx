@@ -72,7 +72,7 @@ function TypographyLead({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="typography-lead"
       className={cn(
-        "text-[19px] leading-relaxed font-light tracking-tight text-muted-foreground",
+        "text-[20px] leading-relaxed font-light tracking-tight text-muted-foreground",
         className
       )}
       {...props}

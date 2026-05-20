@@ -41,24 +41,24 @@ export function DocsSearch() {
     function onKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setOpen((v) => !v);
+        if (open) {
+          setOpen(false);
+        } else {
+          setQuery("");
+          setActive(0);
+          setOpen(true);
+        }
       }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
-  React.useEffect(() => {
-    if (open) {
-      setQuery("");
-      setActive(0);
-      requestAnimationFrame(() => inputRef.current?.focus());
-    }
   }, [open]);
 
   React.useEffect(() => {
-    setActive(0);
-  }, [query]);
+    if (open) {
+      requestAnimationFrame(() => inputRef.current?.focus());
+    }
+  }, [open]);
 
   React.useEffect(() => {
     const el = listRef.current?.querySelector<HTMLElement>(
@@ -70,7 +70,7 @@ export function DocsSearch() {
   function select(href: string) {
     setOpen(false);
     if (typeof window !== "undefined") {
-      window.location.hash = href.startsWith("#") ? href.slice(1) : href;
+      window.location.assign(href.startsWith("#") ? href : `#${href}`);
     }
   }
 
@@ -92,7 +92,7 @@ export function DocsSearch() {
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => { setQuery(""); setActive(0); setOpen(true); }}
         aria-label="Search documentation"
         className="hidden h-9 w-56 items-center gap-2 rounded-lg border border-border bg-muted/40 pl-3 pr-2 text-[13px] text-muted-foreground transition-colors hover:bg-muted md:flex"
       >
@@ -123,7 +123,7 @@ export function DocsSearch() {
               <input
                 ref={inputRef}
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => { setQuery(e.target.value); setActive(0); }}
                 placeholder="Search docs..."
                 className="h-14 flex-1 bg-transparent text-[17px] tracking-tight outline-none placeholder:text-muted-foreground/70"
                 aria-autocomplete="list"

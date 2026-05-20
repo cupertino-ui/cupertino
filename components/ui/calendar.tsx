@@ -118,7 +118,7 @@ function Calendar({
           defaultClassNames.range_end
         ),
         today: cn(
-          "rounded-full bg-primary/15 text-primary font-semibold data-[selected=true]:rounded-none",
+          "rounded-full bg-primary/15 text-primary font-semibold data-[selected=true]:bg-transparent data-[selected=true]:text-inherit",
           defaultClassNames.today
         ),
         outside: cn(

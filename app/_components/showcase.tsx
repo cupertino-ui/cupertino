@@ -35,8 +35,8 @@ export function Showcase({
             <TabsTrigger value="code">Code</TabsTrigger>
           </TabsList>
           <TabsContent value="preview">
-            <div className="overflow-hidden rounded-xl border border-border">
-              <div className="flex min-h-[180px] items-center justify-center bg-background px-6 py-12">
+            <div className="rounded-xl border border-border">
+              <div className="flex min-h-[180px] items-center justify-center rounded-[inherit] bg-background px-6 py-12">
                 {preview}
               </div>
             </div>
@@ -46,13 +46,13 @@ export function Showcase({
           </TabsContent>
         </Tabs>
       ) : (
-        <div className="overflow-hidden rounded-xl border border-border">
-          <div className="flex items-center justify-between border-b border-border bg-muted/30 px-4 py-2">
+        <div className="rounded-xl border border-border">
+          <div className="flex items-center justify-between rounded-t-[inherit] border-b border-border bg-muted/30 px-4 py-2">
             <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground">
               Preview
             </span>
           </div>
-          <div className="flex min-h-[180px] items-center justify-center bg-background px-6 py-12">
+          <div className="flex min-h-[180px] items-center justify-center rounded-b-[inherit] bg-background px-6 py-12">
             {preview}
           </div>
         </div>

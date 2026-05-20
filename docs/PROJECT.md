@@ -202,3 +202,9 @@ Jangan clone snapshot upstream ke dalam repo ini — selalu lihat sumber yang te
 ## Distribusi
 
 Saat ini di-host di `https://cupertino-ui.vercel.app`. Tujuan jangka panjang: terdaftar sebagai namespace `@cupertino-ui` di registry shadcn resmi.
+
+## Troubleshooting Visual
+
+Untuk masalah visual berulang (ring dobel, popup terpotong, ScrollArea clipping, native select rusak), baca:
+
+- [docs/TROUBLESHOOTING-UI.md](./TROUBLESHOOTING-UI.md)

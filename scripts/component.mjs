@@ -7,7 +7,7 @@
 //   node scripts/component.mjs sync          # sync ALL components
 
 import { mkdirSync, copyFileSync, existsSync, readdirSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname } from "node:path";
 
 const [, , cmd, name] = process.argv;
 const REGISTRY = "registry";
