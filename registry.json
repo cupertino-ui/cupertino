@@ -4,6 +4,26 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "direction",
+      "type": "registry:ui",
+      "title": "Direction",
+      "description": "RTL/LTR direction provider — wraps Radix DirectionProvider to set text direction for the entire subtree.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/direction/direction.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "Chart",
+      "description": "Apple HIG chart — Recharts wrapper with rounded-2xl tooltip, backdrop-blur surface, rounded-full legend dots.",
+      "dependencies": ["recharts"],
+      "files": [
+        { "path": "registry/chart/chart.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "toggle-group",
       "type": "registry:ui",
       "title": "Toggle Group",

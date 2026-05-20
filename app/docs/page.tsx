@@ -189,6 +189,11 @@ import {
 } from "@/components/ui/typography";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ResizableDemo } from "@/app/_components/resizable-demo";
+import { ChartDemo } from "@/app/_components/chart-demo";
+import { DatePickerDemo } from "@/app/_components/date-picker-demo";
+import {
+  DirectionProvider,
+} from "@/components/ui/direction";
 import { SidebarDemo } from "@/app/_components/sidebar-demo";
 import { ComboboxDemo } from "@/app/_components/combobox-demo";
 import {
@@ -291,6 +296,11 @@ export default function DocsPage() {
     TypographyDoc,
     ComboboxDoc,
     SidebarDoc,
+    ChartDoc,
+    DirectionDoc,
+    DatePickerDoc,
+    DataTableDoc,
+    ToastDoc,
   ].sort((a, b) => a.name.localeCompare(b.name));
 
   return (
@@ -2485,6 +2495,222 @@ import { MailIcon, BellIcon } from "lucide-react"
   );
 }
 
+function ChartDoc() {
+  return (
+    <Showcase
+      id="chart"
+      name="Chart"
+      description="Apple HIG charts — Recharts wrapper with rounded-2xl blur tooltip, hairline grid, rounded-full legend dots. Bar and area variants shown."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/chart.json"
+      code={`import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+
+const data = [
+  { month: "Jan", revenue: 4200 },
+  { month: "Feb", revenue: 5800 },
+  { month: "Mar", revenue: 7200 },
+]
+
+const config = {
+  revenue: { label: "Revenue", color: "var(--color-primary)" },
+} satisfies ChartConfig
+
+<ChartContainer config={config} className="h-48">
+  <BarChart data={data}>
+    <CartesianGrid vertical={false} />
+    <XAxis dataKey="month" tickLine={false} axisLine={false} />
+    <ChartTooltip content={<ChartTooltipContent />} />
+    <Bar dataKey="revenue" fill="var(--color-primary)" radius={[6, 6, 0, 0]} />
+  </BarChart>
+</ChartContainer>`}
+      preview={<ChartDemo />}
+    />
+  );
+}
+
+function DirectionDoc() {
+  return (
+    <Showcase
+      id="direction"
+      name="Direction"
+      description="RTL/LTR direction provider — wraps Radix DirectionProvider to set text direction for an entire subtree. Useful for Arabic, Hebrew, and other RTL languages."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/direction.json"
+      code={`import { DirectionProvider } from "@/components/ui/direction"
+
+// Wrap any subtree to set RTL direction
+<DirectionProvider dir="rtl">
+  <p>مرحبا بالعالم</p>
+  <Input placeholder="اكتب هنا..." />
+</DirectionProvider>
+
+// Or use the hook to read direction from context
+import { useDirection } from "@/components/ui/direction"
+
+function MyComponent() {
+  const dir = useDirection()
+  return <div dir={dir}>…</div>
+}`}
+      preview={
+        <div className="flex flex-col gap-4 w-full max-w-sm">
+          <div className="rounded-2xl border border-border p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">LTR (default)</p>
+            <DirectionProvider dir="ltr">
+              <p className="text-[15px]">Hello, world! Left to right.</p>
+            </DirectionProvider>
+          </div>
+          <div className="rounded-2xl border border-border p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-2">RTL</p>
+            <DirectionProvider dir="rtl">
+              <p className="text-[15px] text-right" dir="rtl">مرحبا بالعالم! من اليمين إلى اليسار.</p>
+            </DirectionProvider>
+          </div>
+        </div>
+      }
+    />
+  );
+}
+
+function DatePickerDoc() {
+  return (
+    <Showcase
+      id="date-picker"
+      name="Date Picker"
+      description="Composed from Calendar + Popover — no separate component. Apple HIG date picker with rounded-2xl popover, calendar grid, and formatted trigger button."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/calendar.json https://cupertino-ui.vercel.app/r/popover.json"
+      code={`"use client"
+import * as React from "react"
+import { format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { cn } from "@/lib/utils"
+
+export function DatePicker() {
+  const [date, setDate] = React.useState<Date | undefined>()
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline" className={cn("w-56 justify-start gap-2 font-normal", !date && "text-muted-foreground")}>
+          <CalendarIcon className="size-4" />
+          {date ? format(date, "PPP") : "Pick a date"}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto p-0" align="start">
+        <Calendar mode="single" selected={date} onSelect={setDate} />
+      </PopoverContent>
+    </Popover>
+  )
+}`}
+      preview={<DatePickerDemo />}
+    />
+  );
+}
+
+function DataTableDoc() {
+  const payments = [
+    { id: "INV-001", status: "Paid", method: "Apple Pay", amount: "$250.00" },
+    { id: "INV-002", status: "Pending", method: "Card", amount: "$150.00" },
+    { id: "INV-003", status: "Paid", method: "Apple Pay", amount: "$320.00" },
+    { id: "INV-004", status: "Failed", method: "Card", amount: "$90.00" },
+  ];
+  return (
+    <Showcase
+      id="data-table"
+      name="Data Table"
+      description="Built on TanStack Table + Cupertino Table primitives — column sorting, pagination, and row actions. Install @tanstack/react-table to enable full features."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/table.json"
+      code={`import { useReactTable, getCoreRowModel, getSortedRowModel, flexRender } from "@tanstack/react-table"
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table"
+
+const columns = [
+  { accessorKey: "id", header: "Invoice" },
+  { accessorKey: "status", header: "Status" },
+  { accessorKey: "method", header: "Method" },
+  { accessorKey: "amount", header: "Amount" },
+]
+
+export function DataTable({ data }) {
+  const table = useReactTable({ data, columns, getCoreRowModel: getCoreRowModel() })
+
+  return (
+    <Table>
+      <TableHeader>
+        {table.getHeaderGroups().map(hg => (
+          <TableRow key={hg.id}>
+            {hg.headers.map(h => <TableHead key={h.id}>{flexRender(h.column.columnDef.header, h.getContext())}</TableHead>)}
+          </TableRow>
+        ))}
+      </TableHeader>
+      <TableBody>
+        {table.getRowModel().rows.map(row => (
+          <TableRow key={row.id}>
+            {row.getVisibleCells().map(cell => <TableCell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TableCell>)}
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  )
+}`}
+      preview={
+        <div className="w-full max-w-lg overflow-hidden rounded-2xl border border-border/60">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Invoice</TableHead>
+                <TableHead>Status</TableHead>
+                <TableHead>Method</TableHead>
+                <TableHead className="text-right">Amount</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {payments.map((row) => (
+                <TableRow key={row.id}>
+                  <TableCell className="font-medium text-[13px]">{row.id}</TableCell>
+                  <TableCell>
+                    <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${
+                      row.status === "Paid" ? "bg-green-500/10 text-green-600"
+                      : row.status === "Pending" ? "bg-amber-500/10 text-amber-600"
+                      : "bg-destructive/10 text-destructive"
+                    }`}>{row.status}</span>
+                  </TableCell>
+                  <TableCell className="text-muted-foreground">{row.method}</TableCell>
+                  <TableCell className="text-right">{row.amount}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      }
+    />
+  );
+}
+
+function ToastDoc() {
+  return (
+    <Showcase
+      id="toast"
+      name="Toast"
+      description="shadcn deprecated the Radix-based Toast in favor of Sonner. Use the Sonner component — same install, same API, better UX. See Sonner above."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/sonner.json"
+      code={`// shadcn replaced toast with sonner.
+// Import from sonner component:
+import { Toaster } from "@/components/ui/sonner"
+import { toast } from "sonner"
+
+// In layout.tsx:
+<Toaster position="bottom-center" />
+
+// Trigger anywhere:
+toast.success("File saved.")
+toast.error("Something went wrong.")
+toast.info("Update available.")`}
+      preview={<SonnerDemo />}
+    />
+  );
+}
+
 function LabeledSwitch({
   label,
   ...props
@@ -2556,6 +2782,11 @@ function OnThisPage() {
     { label: "Typography", href: "#typography" },
     { label: "Combobox", href: "#combobox" },
     { label: "Sidebar", href: "#sidebar" },
+    { label: "Chart", href: "#chart" },
+    { label: "Direction", href: "#direction" },
+    { label: "Date Picker", href: "#date-picker" },
+    { label: "Data Table", href: "#data-table" },
+    { label: "Toast", href: "#toast" },
   ];
   return (
     <aside className="fixed top-24 right-8 hidden w-52 xl:block">
