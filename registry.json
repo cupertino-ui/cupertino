@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Apple HIG alert — rounded-2xl, muted fill, 15pt semibold title, destructive uses Apple system red.",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        { "path": "registry/alert/alert.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "accordion",
       "type": "registry:ui",
       "title": "Accordion",
