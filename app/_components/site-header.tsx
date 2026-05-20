@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/app/_components/theme-toggle";
 const NAV_ITEMS = [
   { label: "Docs", href: "/docs" },
   { label: "Components", href: "/docs#components" },
+  { label: "Blocks", href: "/blocks" },
 ];
 
 export function SiteHeader() {
