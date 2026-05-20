@@ -31,13 +31,23 @@ npx shadcn@latest add @cupertino-ui/dialog
 
 Komponen direncanakan mengacu pada katalog HIG (controls, navigation, presentation, dst). Daftar awal (akan diperluas):
 
-- [x] Button
-- [x] Switch
-- [x] Card
 - [x] Badge
-- [ ] Dialog / Sheet
-- [ ] Input
-- [ ] Segmented Control
+- [x] Button
+- [x] Card
+- [x] Input
+- [x] Kbd
+- [x] Label
+- [x] Separator
+- [x] Sheet
+- [x] Switch
+- [x] Tabs (iOS Segmented Control)
+- [x] Tooltip
+- [ ] Dialog
+- [ ] Dropdown Menu
+- [ ] Select
+- [ ] Textarea
+- [ ] Checkbox / Radio
+- [ ] Stepper (HIG-only)
 
 ## Filosofi: Re-skin, bukan Wrap
 

@@ -57,6 +57,103 @@
           "target": "components/ui/card.tsx"
         }
       ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Apple HIG input — 44pt height, rounded-xl, subtle filled background, drop-in replacement for shadcn Input.",
+      "files": [
+        {
+          "path": "registry/input/input.tsx",
+          "type": "registry:component",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Apple HIG label — 15pt medium weight, tight tracking, drop-in replacement for shadcn Label.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        {
+          "path": "registry/label/label.tsx",
+          "type": "registry:component",
+          "target": "components/ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Apple HIG separator — subtle 70% border opacity, drop-in replacement for shadcn Separator.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        {
+          "path": "registry/separator/separator.tsx",
+          "type": "registry:component",
+          "target": "components/ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Apple HIG tabs — iOS segmented control style (default variant), pill container with white selected pill.",
+      "dependencies": ["class-variance-authority", "radix-ui"],
+      "files": [
+        {
+          "path": "registry/tabs/tabs.tsx",
+          "type": "registry:component",
+          "target": "components/ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Apple HIG tooltip — dark rounded-lg pill with 12pt medium label, shadow-md, soft slide-in animation.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        {
+          "path": "registry/tooltip/tooltip.tsx",
+          "type": "registry:component",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Apple HIG sheet — rounded-3xl top/bottom variants with iOS grabber indicator, blur backdrop, side drawers.",
+      "dependencies": ["radix-ui", "lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/sheet/sheet.tsx",
+          "type": "registry:component",
+          "target": "components/ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "Kbd",
+      "description": "Keyboard shortcut indicator — small mono badge with subtle border and inset shadow.",
+      "files": [
+        {
+          "path": "registry/kbd/kbd.tsx",
+          "type": "registry:component",
+          "target": "components/ui/kbd.tsx"
+        }
+      ]
     }
   ]
 }
