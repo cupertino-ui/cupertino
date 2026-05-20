@@ -357,6 +357,17 @@
       ]
     },
     {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "description": "Apple HIG horizontal scroll carousel — rounded-2xl slides, dots indicator, smooth Embla scroll, secondary nav buttons.",
+      "dependencies": ["embla-carousel-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        { "path": "registry/carousel/carousel.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "empty",
       "type": "registry:ui",
       "title": "Empty",

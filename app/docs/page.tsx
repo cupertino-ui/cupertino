@@ -133,6 +133,7 @@ import { SonnerDemo } from "@/app/_components/sonner-demo";
 import { CommandDemo } from "@/app/_components/command-demo";
 import { DrawerDemo } from "@/app/_components/drawer-demo";
 import { CalendarDemo } from "@/app/_components/calendar-demo";
+import { CarouselDemo } from "@/app/_components/carousel-demo";
 import {
   InputOTP,
   InputOTPGroup,
@@ -231,6 +232,7 @@ export default function DocsPage() {
         <SwitchDoc />
         <TabsDoc />
         <TooltipDoc />
+        <CarouselDoc />
         <EmptyDoc />
         <SpinnerDoc />
         <TableDoc />
@@ -1519,6 +1521,33 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function CarouselDoc() {
+  return (
+    <Showcase
+      id="carousel"
+      name="Carousel"
+      description="Apple HIG horizontal scroll — rounded-2xl slides, pill dots indicator, smooth Embla snap scroll, secondary ghost nav buttons."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/carousel.json"
+      code={`import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, CarouselDots } from "@/components/ui/carousel"
+
+<Carousel opts={{ loop: true }}>
+  <CarouselContent>
+    <CarouselItem>
+      <div className="rounded-2xl bg-muted p-8">Slide 1</div>
+    </CarouselItem>
+    <CarouselItem>
+      <div className="rounded-2xl bg-muted p-8">Slide 2</div>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+  <CarouselDots />
+</Carousel>`}
+      preview={<CarouselDemo />}
+    />
+  );
+}
+
 function EmptyDoc() {
   return (
     <Showcase
@@ -2099,6 +2128,7 @@ function OnThisPage() {
     { label: "Switch", href: "#switch" },
     { label: "Tabs", href: "#tabs" },
     { label: "Tooltip", href: "#tooltip" },
+    { label: "Carousel", href: "#carousel" },
     { label: "Empty", href: "#empty" },
     { label: "Spinner", href: "#spinner" },
     { label: "Table", href: "#table" },
