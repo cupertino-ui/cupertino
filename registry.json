@@ -357,6 +357,15 @@
       ]
     },
     {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Apple HIG data table — 13px cells, hairline borders, uppercase 11px column headers, hover row bg-muted/40.",
+      "files": [
+        { "path": "registry/table/table.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "resizable",
       "type": "registry:ui",
       "title": "Resizable",
