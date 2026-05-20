@@ -357,6 +357,17 @@
       ]
     },
     {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Apple HIG date grid — rounded-2xl container, circular day cells, today with primary/15 fill, muted weekday labels.",
+      "dependencies": ["react-day-picker"],
+      "registryDependencies": ["button"],
+      "files": [
+        { "path": "registry/calendar/calendar.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "drawer",
       "type": "registry:ui",
       "title": "Drawer",

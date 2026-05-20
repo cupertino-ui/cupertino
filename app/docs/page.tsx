@@ -132,6 +132,7 @@ import { InstallCommand } from "@/app/_components/install-command";
 import { SonnerDemo } from "@/app/_components/sonner-demo";
 import { CommandDemo } from "@/app/_components/command-demo";
 import { DrawerDemo } from "@/app/_components/drawer-demo";
+import { CalendarDemo } from "@/app/_components/calendar-demo";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -206,6 +207,7 @@ export default function DocsPage() {
         <SwitchDoc />
         <TabsDoc />
         <TooltipDoc />
+        <CalendarDoc />
         <DrawerDoc />
         <NavigationMenuDoc />
         <MenubarDoc />
@@ -1487,6 +1489,27 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function CalendarDoc() {
+  return (
+    <Showcase
+      id="calendar"
+      name="Calendar"
+      description="Apple HIG date grid — rounded-2xl container, circular day cells, today highlighted with primary fill, muted weekday labels."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/calendar.json"
+      code={`import { Calendar } from "@/components/ui/calendar"
+
+const [date, setDate] = React.useState<Date | undefined>(new Date())
+
+<Calendar
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+/>`}
+      preview={<CalendarDemo />}
+    />
+  );
+}
+
 function DrawerDoc() {
   return (
     <Showcase
@@ -1823,6 +1846,7 @@ function OnThisPage() {
     { label: "Switch", href: "#switch" },
     { label: "Tabs", href: "#tabs" },
     { label: "Tooltip", href: "#tooltip" },
+    { label: "Calendar", href: "#calendar" },
     { label: "Drawer", href: "#drawer" },
     { label: "Navigation Menu", href: "#navigation-menu" },
     { label: "Menubar", href: "#menubar" },
