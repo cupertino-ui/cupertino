@@ -149,6 +149,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Spinner } from "@/components/ui/spinner";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -223,6 +224,7 @@ export default function DocsPage() {
         <SwitchDoc />
         <TabsDoc />
         <TooltipDoc />
+        <SpinnerDoc />
         <TableDoc />
         <ResizableDoc />
         <AspectRatioDoc />
@@ -1509,6 +1511,31 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function SpinnerDoc() {
+  return (
+    <Showcase
+      id="spinner"
+      name="Spinner"
+      description="Apple HIG activity indicator — ring arc animation matching iOS. sm / default / lg sizes. Use text color to tint."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/spinner.json"
+      code={`import { Spinner } from "@/components/ui/spinner"
+
+<Spinner />
+<Spinner size="sm" />
+<Spinner size="lg" className="text-primary" />`}
+      preview={
+        <div className="flex items-center gap-6">
+          <Spinner size="sm" className="text-muted-foreground" />
+          <Spinner className="text-muted-foreground" />
+          <Spinner size="lg" className="text-muted-foreground" />
+          <Spinner className="text-primary" />
+          <Spinner className="text-destructive" />
+        </div>
+      }
+    />
+  );
+}
+
 function TableDoc() {
   const rows = [
     { name: "MacBook Pro", category: "Mac", price: "$1,999", status: "In Stock" },
@@ -2026,6 +2053,7 @@ function OnThisPage() {
     { label: "Switch", href: "#switch" },
     { label: "Tabs", href: "#tabs" },
     { label: "Tooltip", href: "#tooltip" },
+    { label: "Spinner", href: "#spinner" },
     { label: "Table", href: "#table" },
     { label: "Resizable", href: "#resizable" },
     { label: "Aspect Ratio", href: "#aspect-ratio" },

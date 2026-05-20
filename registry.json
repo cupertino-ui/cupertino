@@ -357,6 +357,16 @@
       ]
     },
     {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Apple HIG activity indicator — rounded-full ring-2 with arc animation. Matches iOS activity indicator. sm/default/lg sizes.",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        { "path": "registry/spinner/spinner.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "table",
       "type": "registry:ui",
       "title": "Table",
