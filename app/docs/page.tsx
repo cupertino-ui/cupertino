@@ -32,6 +32,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Popover,
   PopoverContent,
@@ -145,6 +146,7 @@ export default function DocsPage() {
         <PopoverDoc />
         <ProgressDoc />
         <RadioGroupDoc />
+        <ScrollAreaDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -839,6 +841,34 @@ import { Label } from "@/components/ui/label"
   );
 }
 
+function ScrollAreaDoc() {
+  const tags = Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`);
+  return (
+    <Showcase
+      id="scroll-area"
+      name="Scroll Area"
+      description="Thin 8pt scrollbar with rounded-full thumb. Hides until hover on desktop, matches native iOS scroll behavior."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/scroll-area.json"
+      code={`import { ScrollArea } from "@/components/ui/scroll-area"
+
+<ScrollArea className="h-48 rounded-2xl border p-4">
+  {items.map(item => <div key={item}>{item}</div>)}
+</ScrollArea>`}
+      preview={
+        <ScrollArea className="h-48 w-full max-w-xs rounded-2xl border border-border p-4">
+          <div className="space-y-2">
+            {tags.map((tag) => (
+              <div key={tag} className="text-[13px] text-muted-foreground">
+                {tag}
+              </div>
+            ))}
+          </div>
+        </ScrollArea>
+      }
+    />
+  );
+}
+
 function BadgeDoc() {
   return (
     <Showcase
@@ -1250,6 +1280,7 @@ function OnThisPage() {
     { label: "Popover", href: "#popover" },
     { label: "Progress", href: "#progress" },
     { label: "Radio Group", href: "#radio-group" },
+    { label: "Scroll Area", href: "#scroll-area" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },

@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Apple HIG scroll area — thin 8pt scrollbar, rounded-full thumb, muted fill.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/scroll-area/scroll-area.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "radio-group",
       "type": "registry:ui",
       "title": "Radio Group",
