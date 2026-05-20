@@ -30,6 +30,15 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import {
   Avatar,
   AvatarFallback,
   AvatarGroup,
@@ -77,6 +86,7 @@ export default function DocsPage() {
         <AlertDoc />
         <AlertDialogDoc />
         <AvatarDoc />
+        <BreadcrumbDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -361,6 +371,47 @@ function AvatarDoc() {
             </Avatar>
           </AvatarGroup>
         </div>
+      }
+    />
+  );
+}
+
+function BreadcrumbDoc() {
+  return (
+    <Showcase
+      id="breadcrumb"
+      name="Breadcrumb"
+      description="13pt navigation trail — chevron separator, pill hover on links, current page in medium weight."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/breadcrumb.json"
+      code={`import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb"
+
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem><BreadcrumbLink href="/">Home</BreadcrumbLink></BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem><BreadcrumbPage>Settings</BreadcrumbPage></BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>`}
+      preview={
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbEllipsis />
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">Components</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
       }
     />
   );
@@ -767,6 +818,7 @@ function OnThisPage() {
     { label: "Alert", href: "#alert" },
     { label: "Alert Dialog", href: "#alert-dialog" },
     { label: "Avatar", href: "#avatar" },
+    { label: "Breadcrumb", href: "#breadcrumb" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },
