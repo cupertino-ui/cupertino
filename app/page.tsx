@@ -52,7 +52,7 @@ function Hero() {
             <a href="/docs">Get started</a>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <a href="/docs#components">Components</a>
+            <a href="/docs#components">View Components</a>
           </Button>
         </div>
       </div>
