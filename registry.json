@@ -357,6 +357,28 @@
       ]
     },
     {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "Input Group",
+      "description": "Apple HIG input group — rounded-xl container, 44pt height, prefix/suffix addons, dividers as bg-border/60.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["button", "input", "textarea"],
+      "files": [
+        { "path": "registry/input-group/input-group.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "Apple HIG command palette — rounded-2xl modal, large search input, grouped sections with uppercase 11px labels.",
+      "dependencies": ["cmdk"],
+      "registryDependencies": ["dialog"],
+      "files": [
+        { "path": "registry/command/command.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "sonner",
       "type": "registry:ui",
       "title": "Sonner",

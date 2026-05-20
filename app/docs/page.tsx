@@ -130,6 +130,7 @@ import {
 } from "@/components/ui/accordion";
 import { InstallCommand } from "@/app/_components/install-command";
 import { SonnerDemo } from "@/app/_components/sonner-demo";
+import { CommandDemo } from "@/app/_components/command-demo";
 
 export default function DocsPage() {
   return (
@@ -177,6 +178,7 @@ export default function DocsPage() {
         <SwitchDoc />
         <TabsDoc />
         <TooltipDoc />
+        <CommandDoc />
         <SonnerDoc />
       </div>
 
@@ -1453,6 +1455,37 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function CommandDoc() {
+  return (
+    <Showcase
+      id="command"
+      name="Command"
+      description="Apple HIG command palette — rounded-2xl modal, prominent search input, grouped sections with uppercase 11px labels, ⌘K shortcut hint."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/command.json"
+      code={`import { Command, CommandInput, CommandList, CommandEmpty, CommandGroup, CommandItem, CommandSeparator, CommandShortcut, CommandDialog } from "@/components/ui/command"
+
+<CommandDialog open={open} onOpenChange={setOpen}>
+  <Command>
+    <CommandInput placeholder="Search…" />
+    <CommandList>
+      <CommandEmpty>No results found.</CommandEmpty>
+      <CommandGroup heading="Suggestions">
+        <CommandItem>Dashboard</CommandItem>
+        <CommandItem>Documents</CommandItem>
+      </CommandGroup>
+      <CommandSeparator />
+      <CommandGroup heading="Settings">
+        <CommandItem>Profile<CommandShortcut>⌘P</CommandShortcut></CommandItem>
+        <CommandItem>Settings<CommandShortcut>⌘,</CommandShortcut></CommandItem>
+      </CommandGroup>
+    </CommandList>
+  </Command>
+</CommandDialog>`}
+      preview={<CommandDemo />}
+    />
+  );
+}
+
 function SonnerDoc() {
   return (
     <Showcase
@@ -1524,6 +1557,7 @@ function OnThisPage() {
     { label: "Switch", href: "#switch" },
     { label: "Tabs", href: "#tabs" },
     { label: "Tooltip", href: "#tooltip" },
+    { label: "Command", href: "#command" },
     { label: "Sonner", href: "#sonner" },
   ];
   return (
