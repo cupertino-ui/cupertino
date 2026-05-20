@@ -4,6 +4,17 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "Apple HIG toggle group — rounded-2xl container, spacing=0 creates segmented-control attachment.",
+      "dependencies": ["class-variance-authority", "radix-ui"],
+      "registryDependencies": ["toggle"],
+      "files": [
+        { "path": "registry/toggle-group/toggle-group.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "toggle",
       "type": "registry:ui",
       "title": "Toggle",

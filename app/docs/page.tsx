@@ -37,6 +37,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
 import { Toggle } from "@/components/ui/toggle";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import {
   Select,
   SelectContent,
@@ -163,6 +164,7 @@ export default function DocsPage() {
         <SliderDoc />
         <TextareaDoc />
         <ToggleDoc />
+        <ToggleGroupDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -1028,6 +1030,38 @@ function ToggleDoc() {
   );
 }
 
+function ToggleGroupDoc() {
+  return (
+    <Showcase
+      id="toggle-group"
+      name="Toggle Group"
+      description="Composed toggle buttons — spacing=0 creates an iOS segmented-control attachment with shared borders. Supports single and multiple selection."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/toggle-group.json"
+      code={`import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+
+<ToggleGroup type="single" defaultValue="center">
+  <ToggleGroupItem value="left">Left</ToggleGroupItem>
+  <ToggleGroupItem value="center">Center</ToggleGroupItem>
+  <ToggleGroupItem value="right">Right</ToggleGroupItem>
+</ToggleGroup>`}
+      preview={
+        <div className="flex flex-col items-center gap-4">
+          <ToggleGroup type="single" defaultValue="center">
+            <ToggleGroupItem value="left">Left</ToggleGroupItem>
+            <ToggleGroupItem value="center">Center</ToggleGroupItem>
+            <ToggleGroupItem value="right">Right</ToggleGroupItem>
+          </ToggleGroup>
+          <ToggleGroup type="multiple" variant="outline" spacing={0}>
+            <ToggleGroupItem value="bold">B</ToggleGroupItem>
+            <ToggleGroupItem value="italic">I</ToggleGroupItem>
+            <ToggleGroupItem value="underline">U</ToggleGroupItem>
+          </ToggleGroup>
+        </div>
+      }
+    />
+  );
+}
+
 function BadgeDoc() {
   return (
     <Showcase
@@ -1445,6 +1479,7 @@ function OnThisPage() {
     { label: "Slider", href: "#slider" },
     { label: "Textarea", href: "#textarea" },
     { label: "Toggle", href: "#toggle" },
+    { label: "Toggle Group", href: "#toggle-group" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },
