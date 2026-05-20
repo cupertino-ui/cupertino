@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown Menu",
+      "description": "Apple HIG dropdown menu — rounded-2xl surface, 15pt items, 44pt minimum rows, uppercase section labels.",
+      "dependencies": ["radix-ui", "lucide-react"],
+      "files": [
+        { "path": "registry/dropdown-menu/dropdown-menu.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
