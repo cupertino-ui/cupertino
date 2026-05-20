@@ -357,6 +357,16 @@
       ]
     },
     {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "description": "Apple HIG horizontal nav — 13.5pt tight-tracking triggers, rounded-lg hover, rounded-2xl mega-menu viewport, no underline.",
+      "dependencies": ["class-variance-authority", "radix-ui"],
+      "files": [
+        { "path": "registry/navigation-menu/navigation-menu.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "menubar",
       "type": "registry:ui",
       "title": "Menubar",
