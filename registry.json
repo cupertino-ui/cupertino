@@ -4,6 +4,17 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Apple HIG dialog — rounded-3xl, blur backdrop, 17pt semibold title, X close button top-right.",
+      "dependencies": ["radix-ui", "lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        { "path": "registry/dialog/dialog.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "collapsible",
       "type": "registry:ui",
       "title": "Collapsible",
