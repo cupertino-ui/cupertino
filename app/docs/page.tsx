@@ -129,6 +129,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { InstallCommand } from "@/app/_components/install-command";
+import { SonnerDemo } from "@/app/_components/sonner-demo";
 
 export default function DocsPage() {
   return (
@@ -176,6 +177,7 @@ export default function DocsPage() {
         <SwitchDoc />
         <TabsDoc />
         <TooltipDoc />
+        <SonnerDoc />
       </div>
 
       <OnThisPage />
@@ -1451,6 +1453,28 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function SonnerDoc() {
+  return (
+    <Showcase
+      id="sonner"
+      name="Sonner"
+      description="Apple HIG toast notifications — rounded-2xl blur surface, subtle shadow, icon-coded severity. Place &lt;Toaster /&gt; once in your layout."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/sonner.json"
+      code={`import { Toaster } from "@/components/ui/sonner"
+import { toast } from "sonner"
+
+// In your layout:
+<Toaster position="bottom-center" />
+
+// Trigger a toast:
+toast.success("Changes saved.", { description: "Your profile has been updated." })
+toast.error("Something went wrong.")
+toast.info("Update available.")`}
+      preview={<SonnerDemo />}
+    />
+  );
+}
+
 function LabeledSwitch({
   label,
   ...props
@@ -1500,6 +1524,7 @@ function OnThisPage() {
     { label: "Switch", href: "#switch" },
     { label: "Tabs", href: "#tabs" },
     { label: "Tooltip", href: "#tooltip" },
+    { label: "Sonner", href: "#sonner" },
   ];
   return (
     <aside className="fixed top-24 right-8 hidden w-52 xl:block">

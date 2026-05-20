@@ -355,6 +355,16 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "Apple HIG toast notifications — rounded-2xl, blur surface, subtle shadow, slide-in animation.",
+      "dependencies": ["sonner", "next-themes"],
+      "files": [
+        { "path": "registry/sonner/sonner.tsx", "type": "registry:ui" }
+      ]
     }
   ]
 }
