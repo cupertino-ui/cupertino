@@ -12,8 +12,7 @@
       "files": [
         {
           "path": "registry/button/button.tsx",
-          "type": "registry:component",
-          "target": "components/ui/button.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -26,8 +25,7 @@
       "files": [
         {
           "path": "registry/switch/switch.tsx",
-          "type": "registry:component",
-          "target": "components/ui/switch.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -40,8 +38,7 @@
       "files": [
         {
           "path": "registry/badge/badge.tsx",
-          "type": "registry:component",
-          "target": "components/ui/badge.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -53,8 +50,7 @@
       "files": [
         {
           "path": "registry/card/card.tsx",
-          "type": "registry:component",
-          "target": "components/ui/card.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -66,8 +62,7 @@
       "files": [
         {
           "path": "registry/input/input.tsx",
-          "type": "registry:component",
-          "target": "components/ui/input.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -80,8 +75,7 @@
       "files": [
         {
           "path": "registry/label/label.tsx",
-          "type": "registry:component",
-          "target": "components/ui/label.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -94,8 +88,7 @@
       "files": [
         {
           "path": "registry/separator/separator.tsx",
-          "type": "registry:component",
-          "target": "components/ui/separator.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -108,8 +101,7 @@
       "files": [
         {
           "path": "registry/tabs/tabs.tsx",
-          "type": "registry:component",
-          "target": "components/ui/tabs.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -122,8 +114,7 @@
       "files": [
         {
           "path": "registry/tooltip/tooltip.tsx",
-          "type": "registry:component",
-          "target": "components/ui/tooltip.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -137,8 +128,7 @@
       "files": [
         {
           "path": "registry/sheet/sheet.tsx",
-          "type": "registry:component",
-          "target": "components/ui/sheet.tsx"
+          "type": "registry:ui"
         }
       ]
     },
@@ -150,8 +140,7 @@
       "files": [
         {
           "path": "registry/kbd/kbd.tsx",
-          "type": "registry:component",
-          "target": "components/ui/kbd.tsx"
+          "type": "registry:ui"
         }
       ]
     }
