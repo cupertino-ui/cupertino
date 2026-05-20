@@ -357,6 +357,16 @@
       ]
     },
     {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "description": "Apple HIG split panes — 1px handle that widens to 4px on hover, ring-ring/50 on drag.",
+      "dependencies": ["react-resizable-panels"],
+      "files": [
+        { "path": "registry/resizable/resizable.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "aspect-ratio",
       "type": "registry:ui",
       "title": "Aspect Ratio",

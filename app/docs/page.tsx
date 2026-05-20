@@ -140,6 +140,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { ResizableDemo } from "@/app/_components/resizable-demo";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -214,6 +215,7 @@ export default function DocsPage() {
         <SwitchDoc />
         <TabsDoc />
         <TooltipDoc />
+        <ResizableDoc />
         <AspectRatioDoc />
         <InputOTPDoc />
         <CalendarDoc />
@@ -1498,6 +1500,25 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function ResizableDoc() {
+  return (
+    <Showcase
+      id="resizable"
+      name="Resizable"
+      description="Split panes with Apple HIG handles — 1px divider that widens to 4px on hover, ring-ring/50 highlight on drag."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/resizable.json"
+      code={`import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@/components/ui/resizable"
+
+<ResizablePanelGroup orientation="horizontal" className="rounded-2xl border">
+  <ResizablePanel defaultSize={50}>Left</ResizablePanel>
+  <ResizableHandle withHandle />
+  <ResizablePanel defaultSize={50}>Right</ResizablePanel>
+</ResizablePanelGroup>`}
+      preview={<ResizableDemo />}
+    />
+  );
+}
+
 function AspectRatioDoc() {
   return (
     <Showcase
@@ -1933,6 +1954,7 @@ function OnThisPage() {
     { label: "Switch", href: "#switch" },
     { label: "Tabs", href: "#tabs" },
     { label: "Tooltip", href: "#tooltip" },
+    { label: "Resizable", href: "#resizable" },
     { label: "Aspect Ratio", href: "#aspect-ratio" },
     { label: "Input OTP", href: "#input-otp" },
     { label: "Calendar", href: "#calendar" },
