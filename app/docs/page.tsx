@@ -131,6 +131,7 @@ import {
 import { InstallCommand } from "@/app/_components/install-command";
 import { SonnerDemo } from "@/app/_components/sonner-demo";
 import { CommandDemo } from "@/app/_components/command-demo";
+import { DrawerDemo } from "@/app/_components/drawer-demo";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -205,6 +206,7 @@ export default function DocsPage() {
         <SwitchDoc />
         <TabsDoc />
         <TooltipDoc />
+        <DrawerDoc />
         <NavigationMenuDoc />
         <MenubarDoc />
         <ContextMenuDoc />
@@ -1485,6 +1487,37 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function DrawerDoc() {
+  return (
+    <Showcase
+      id="drawer"
+      name="Drawer"
+      description="Apple HIG bottom sheet — Vaul-based, rounded-t-3xl with iOS grabber, blur overlay, same surface as sheet."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/drawer.json"
+      code={`import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerFooter, DrawerClose } from "@/components/ui/drawer"
+import { Button } from "@/components/ui/button"
+
+<Drawer>
+  <DrawerTrigger asChild>
+    <Button variant="outline">Open Drawer</Button>
+  </DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Share with Friends</DrawerTitle>
+      <DrawerDescription>Choose how you'd like to share.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <DrawerClose asChild>
+        <Button variant="secondary">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>`}
+      preview={<DrawerDemo />}
+    />
+  );
+}
+
 function NavigationMenuDoc() {
   return (
     <Showcase
@@ -1790,6 +1823,7 @@ function OnThisPage() {
     { label: "Switch", href: "#switch" },
     { label: "Tabs", href: "#tabs" },
     { label: "Tooltip", href: "#tooltip" },
+    { label: "Drawer", href: "#drawer" },
     { label: "Navigation Menu", href: "#navigation-menu" },
     { label: "Menubar", href: "#menubar" },
     { label: "Context Menu", href: "#context-menu" },

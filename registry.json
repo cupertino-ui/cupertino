@@ -357,6 +357,16 @@
       ]
     },
     {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Apple HIG bottom sheet — Vaul-based, rounded-t-3xl + iOS grabber, blur overlay, matches sheet surface style.",
+      "dependencies": ["vaul"],
+      "files": [
+        { "path": "registry/drawer/drawer.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "navigation-menu",
       "type": "registry:ui",
       "title": "Navigation Menu",
