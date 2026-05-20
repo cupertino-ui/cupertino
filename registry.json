@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Apple HIG slider — 6pt track, white shadow thumb with scale-hover, primary fill range.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/slider/slider.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
