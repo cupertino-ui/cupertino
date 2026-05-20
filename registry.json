@@ -4,6 +4,17 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "Apple HIG alert dialog — 270px wide, rounded-3xl, iOS-style footer buttons with separator.",
+      "dependencies": ["radix-ui"],
+      "registryDependencies": ["button"],
+      "files": [
+        { "path": "registry/alert-dialog/alert-dialog.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
