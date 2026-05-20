@@ -31,6 +31,14 @@ import {
 } from "@/components/ui/tooltip";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
+  Popover,
+  PopoverContent,
+  PopoverHeader,
+  PopoverTitle,
+  PopoverDescription,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
   Pagination,
   PaginationContent,
   PaginationEllipsis,
@@ -132,6 +140,7 @@ export default function DocsPage() {
         <DropdownMenuDoc />
         <HoverCardDoc />
         <PaginationDoc />
+        <PopoverDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -727,6 +736,48 @@ function PaginationDoc() {
   );
 }
 
+function PopoverDoc() {
+  return (
+    <Showcase
+      id="popover"
+      name="Popover"
+      description="rounded-2xl surface, shadow-xl. Optional title/description slots. Smooth zoom-in on open."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/popover.json"
+      code={`import { Popover, PopoverTrigger, PopoverContent, PopoverHeader, PopoverTitle } from "@/components/ui/popover"
+import { Button } from "@/components/ui/button"
+
+<Popover>
+  <PopoverTrigger asChild><Button variant="outline">Open</Button></PopoverTrigger>
+  <PopoverContent>
+    <PopoverHeader>
+      <PopoverTitle>Dimensions</PopoverTitle>
+    </PopoverHeader>
+    <p>Set the dimensions for the layer.</p>
+  </PopoverContent>
+</Popover>`}
+      preview={
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button variant="outline">Open Popover</Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-72">
+            <PopoverHeader>
+              <PopoverTitle>Dimensions</PopoverTitle>
+              <PopoverDescription>
+                Set the dimensions for the layer.
+              </PopoverDescription>
+            </PopoverHeader>
+            <div className="flex flex-col gap-2">
+              <Input placeholder="Width" />
+              <Input placeholder="Height" />
+            </div>
+          </PopoverContent>
+        </Popover>
+      }
+    />
+  );
+}
+
 function BadgeDoc() {
   return (
     <Showcase
@@ -1135,6 +1186,7 @@ function OnThisPage() {
     { label: "Dropdown Menu", href: "#dropdown-menu" },
     { label: "Hover Card", href: "#hover-card" },
     { label: "Pagination", href: "#pagination" },
+    { label: "Popover", href: "#popover" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },

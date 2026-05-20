@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Apple HIG popover — rounded-2xl, shadow-xl, 13pt body, optional title and description slots.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/popover/popover.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "pagination",
       "type": "registry:ui",
       "title": "Pagination",
