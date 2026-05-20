@@ -357,6 +357,16 @@
       ]
     },
     {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "description": "Apple HIG OTP input — rounded-xl cells, 44pt height, focus ring per cell, pulsing caret.",
+      "dependencies": ["input-otp"],
+      "files": [
+        { "path": "registry/input-otp/input-otp.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "calendar",
       "type": "registry:ui",
       "title": "Calendar",
