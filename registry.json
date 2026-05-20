@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Apple HIG select — 44pt height, rounded-xl muted trigger, rounded-2xl dropdown, primary checkmark.",
+      "dependencies": ["radix-ui", "lucide-react"],
+      "files": [
+        { "path": "registry/select/select.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "scroll-area",
       "type": "registry:ui",
       "title": "Scroll Area",
