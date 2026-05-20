@@ -4,6 +4,15 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Apple HIG skeleton — rounded-xl, muted pulse animation for loading placeholders.",
+      "files": [
+        { "path": "registry/skeleton/skeleton.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "select",
       "type": "registry:ui",
       "title": "Select",
