@@ -139,6 +139,7 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -213,6 +214,7 @@ export default function DocsPage() {
         <SwitchDoc />
         <TabsDoc />
         <TooltipDoc />
+        <AspectRatioDoc />
         <InputOTPDoc />
         <CalendarDoc />
         <DrawerDoc />
@@ -1496,6 +1498,33 @@ import { Button } from "@/components/ui/button"
   );
 }
 
+function AspectRatioDoc() {
+  return (
+    <Showcase
+      id="aspect-ratio"
+      name="Aspect Ratio"
+      description="Pure utility wrapper that maintains a fixed ratio. No visible styling — wraps any child in a ratio-locked container."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/aspect-ratio.json"
+      code={`import { AspectRatio } from "@/components/ui/aspect-ratio"
+
+<div className="w-64">
+  <AspectRatio ratio={16 / 9}>
+    <img src="..." className="rounded-2xl object-cover w-full h-full" />
+  </AspectRatio>
+</div>`}
+      preview={
+        <div className="w-64">
+          <AspectRatio ratio={16 / 9}>
+            <div className="flex h-full w-full items-center justify-center rounded-2xl bg-muted text-[13px] text-muted-foreground">
+              16 / 9
+            </div>
+          </AspectRatio>
+        </div>
+      }
+    />
+  );
+}
+
 function InputOTPDoc() {
   return (
     <Showcase
@@ -1904,6 +1933,7 @@ function OnThisPage() {
     { label: "Switch", href: "#switch" },
     { label: "Tabs", href: "#tabs" },
     { label: "Tooltip", href: "#tooltip" },
+    { label: "Aspect Ratio", href: "#aspect-ratio" },
     { label: "Input OTP", href: "#input-otp" },
     { label: "Calendar", href: "#calendar" },
     { label: "Drawer", href: "#drawer" },
