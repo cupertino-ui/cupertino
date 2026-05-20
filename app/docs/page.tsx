@@ -30,6 +30,12 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import {
+  Avatar,
+  AvatarFallback,
+  AvatarGroup,
+  AvatarImage,
+} from "@/components/ui/avatar";
+import {
   AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
@@ -70,6 +76,7 @@ export default function DocsPage() {
         <AccordionDoc />
         <AlertDoc />
         <AlertDialogDoc />
+        <AvatarDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -306,6 +313,54 @@ import { Button } from "@/components/ui/button"
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
+      }
+    />
+  );
+}
+
+function AvatarDoc() {
+  return (
+    <Showcase
+      id="avatar"
+      name="Avatar"
+      description="Circular, 40pt default. Medium-weight initials fallback. Supports sm/lg sizes, badge overlay, and stacked group."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/avatar.json"
+      code={`import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>`}
+      preview={
+        <div className="flex flex-wrap items-center justify-center gap-6">
+          <Avatar size="sm">
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <Avatar size="lg">
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <Avatar>
+            <AvatarFallback>JD</AvatarFallback>
+          </Avatar>
+          <AvatarGroup>
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarFallback>JD</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarFallback>MK</AvatarFallback>
+            </Avatar>
+          </AvatarGroup>
+        </div>
       }
     />
   );
@@ -711,6 +766,7 @@ function OnThisPage() {
     { label: "Accordion", href: "#accordion" },
     { label: "Alert", href: "#alert" },
     { label: "Alert Dialog", href: "#alert-dialog" },
+    { label: "Avatar", href: "#avatar" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },

@@ -4,6 +4,16 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Apple HIG avatar — circular, 40pt default, medium-weight fallback initials, badge and group variants.",
+      "dependencies": ["radix-ui"],
+      "files": [
+        { "path": "registry/avatar/avatar.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "alert-dialog",
       "type": "registry:ui",
       "title": "Alert Dialog",
