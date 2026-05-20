@@ -4,6 +4,15 @@
   "homepage": "https://cupertino-ui.vercel.app",
   "items": [
     {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Apple HIG textarea — rounded-xl, muted fill, 15pt, focus clears background for readability.",
+      "files": [
+        { "path": "registry/textarea/textarea.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "slider",
       "type": "registry:ui",
       "title": "Slider",

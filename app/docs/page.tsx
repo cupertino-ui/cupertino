@@ -35,6 +35,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Slider } from "@/components/ui/slider";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -159,6 +160,7 @@ export default function DocsPage() {
         <SelectDoc />
         <SkeletonDoc />
         <SliderDoc />
+        <TextareaDoc />
         <BadgeDoc />
         <ButtonDoc />
         <CardDoc />
@@ -977,6 +979,26 @@ function SliderDoc() {
   );
 }
 
+function TextareaDoc() {
+  return (
+    <Showcase
+      id="textarea"
+      name="Textarea"
+      description="rounded-xl, muted fill, 15pt with relaxed line-height. Focus clears background fill for readability."
+      install="npx shadcn add https://cupertino-ui.vercel.app/r/textarea.json"
+      code={`import { Textarea } from "@/components/ui/textarea"
+
+<Textarea placeholder="Write a message…" />`}
+      preview={
+        <div className="flex w-full max-w-sm flex-col gap-3">
+          <Textarea placeholder="Write a message…" />
+          <Textarea placeholder="Disabled" disabled />
+        </div>
+      }
+    />
+  );
+}
+
 function BadgeDoc() {
   return (
     <Showcase
@@ -1392,6 +1414,7 @@ function OnThisPage() {
     { label: "Select", href: "#select" },
     { label: "Skeleton", href: "#skeleton" },
     { label: "Slider", href: "#slider" },
+    { label: "Textarea", href: "#textarea" },
     { label: "Badge", href: "#badge" },
     { label: "Button", href: "#button" },
     { label: "Card", href: "#card" },
