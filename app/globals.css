@@ -91,14 +91,14 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar: oklch(0.97 0.003 280);                 /* Apple sidebar surface — subtle gray */
+  --sidebar-foreground: oklch(0.21 0.005 280);      /* matches --foreground */
+  --sidebar-primary: oklch(0.6 0.2 254);            /* iOS system blue */
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-accent: oklch(0.93 0.005 280);          /* hover row tint */
+  --sidebar-accent-foreground: oklch(0.21 0.005 280);
+  --sidebar-border: oklch(0.87 0.005 280);          /* matches --border */
+  --sidebar-ring: oklch(0.6 0.2 254);
 
   --system-blue: #007aff;
   --system-green: #34c759;
@@ -134,14 +134,14 @@
   --border: oklch(0.3 0.005 280);            /* #424245 — Apple dark border */
   --input: oklch(0.3 0.005 280);
   --ring: oklch(0.65 0.22 254);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar: oklch(0.18 0.005 280);                 /* Apple dark sidebar — #1d1d1f */
+  --sidebar-foreground: oklch(0.96 0.003 280);
+  --sidebar-primary: oklch(0.65 0.22 254);          /* iOS dark system blue */
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-accent: oklch(0.24 0.005 280);
+  --sidebar-accent-foreground: oklch(0.96 0.003 280);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.65 0.22 254);
 
   --system-blue: #0a84ff;
   --system-green: #30d158;

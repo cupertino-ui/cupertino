@@ -11,7 +11,7 @@ export function GitHubLink() {
     <Tooltip>
       <TooltipTrigger asChild>
         <a
-          href="https://github.com/dtdi-dev/cupertino"
+          href="https://github.com/cupertino-ui/cupertino"
           target="_blank"
           rel="noopener noreferrer"
           className="grid size-8 place-items-center rounded-md border border-border text-foreground transition-colors hover:bg-muted"

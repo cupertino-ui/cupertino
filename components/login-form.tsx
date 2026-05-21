@@ -48,7 +48,7 @@ export function LoginForm({
             <Button type="submit">Login</Button>
           </Field>
           <FieldSeparator>Or</FieldSeparator>
-          <Field className="grid gap-4 sm:grid-cols-2">
+          <Field className="grid gap-3">
             <Button variant="outline" type="button">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path

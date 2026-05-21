@@ -147,7 +147,7 @@ import {
   InputGroupInput,
   InputGroupText,
 } from "@/components/ui/input-group";
-import { SearchIcon, AtSignIcon, UserIcon, BellIcon, StarIcon, ChevronRightIcon } from "lucide-react";
+import { SearchIcon, AtSignIcon, UserIcon, BellIcon, StarIcon, ChevronRightIcon, Bookmark } from "lucide-react";
 import {
   ButtonGroup,
   ButtonGroupSeparator,
@@ -1021,14 +1021,26 @@ function ScrollAreaDoc() {
       install="npx shadcn add https://cupertino-ui.vercel.app/r/scroll-area.json"
       code={`import { ScrollArea } from "@/components/ui/scroll-area"
 
-<ScrollArea className="h-48 rounded-2xl border p-4">
-  {items.map(item => <div key={item}>{item}</div>)}
+<ScrollArea className="h-48 rounded-2xl border">
+  <div className="space-y-0.5 p-2">
+    {items.map(item => (
+      <div
+        key={item}
+        className="rounded-lg px-3 py-1.5 text-[13px] hover:bg-muted/60"
+      >
+        {item}
+      </div>
+    ))}
+  </div>
 </ScrollArea>`}
       preview={
-        <ScrollArea className="h-48 w-full max-w-xs rounded-2xl border border-border p-4">
-          <div className="space-y-2">
+        <ScrollArea className="h-48 w-full max-w-xs rounded-2xl border border-border">
+          <div className="space-y-0.5 p-2">
             {tags.map((tag) => (
-              <div key={tag} className="text-[13px] text-muted-foreground">
+              <div
+                key={tag}
+                className="rounded-lg px-3 py-1.5 text-[13px] text-foreground hover:bg-muted/60"
+              >
                 {tag}
               </div>
             ))}
@@ -1162,20 +1174,32 @@ function ToggleDoc() {
       name="Toggle"
       description="44pt, rounded-xl. Primary fill when pressed-on; transparent when off. Default and outline variants, scale-press feedback."
       install="npx shadcn add https://cupertino-ui.vercel.app/r/toggle.json"
-      code={`import { Toggle } from "@/components/ui/toggle"
+      code={`import { Bookmark } from "lucide-react"
+import { Toggle } from "@/components/ui/toggle"
 
-<Toggle>Bold</Toggle>
-<Toggle variant="outline" defaultPressed>Italic</Toggle>`}
+<Toggle variant="outline">
+  <Bookmark className="group-data-[state=on]/toggle:fill-current" />
+  Bookmark
+</Toggle>
+
+<Toggle
+  variant="outline"
+  defaultPressed
+  className="data-[state=on]:border-white/20 data-[state=on]:bg-white/15 data-[state=on]:text-white"
+>
+  <Bookmark className="group-data-[state=on]/toggle:fill-current" />
+  Bookmark
+</Toggle>`}
       preview={
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <Toggle>Default</Toggle>
-          <Toggle defaultPressed>Pressed</Toggle>
-          <Toggle variant="outline">Outline</Toggle>
-          <Toggle variant="outline" defaultPressed>
-            On
+        <div className="flex flex-wrap items-center justify-center gap-3 rounded-2xl bg-black/95 p-8">
+          <Toggle
+            variant="outline"
+            defaultPressed
+            className="data-[state=on]:border-white/20 data-[state=on]:bg-white/15 data-[state=on]:text-white"
+          >
+            <Bookmark className="group-data-[state=on]/toggle:fill-current" />
+            Bookmark
           </Toggle>
-          <Toggle size="sm">Small</Toggle>
-          <Toggle disabled>Disabled</Toggle>
         </div>
       }
     />

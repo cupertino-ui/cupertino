@@ -88,3 +88,29 @@ Minimal validasi visual:
 - `ScrollArea`
 - `DropdownMenu/ContextMenu`
 
+---
+
+## ScrollArea: list item terpotong di sudut rounded
+
+**Gejala**: teks item (atau highlight `::selection`-nya) terlihat terpotong di pojok `ScrollArea` yang `rounded-*`.
+
+**Akar masalah**: container `overflow:hidden` + `rounded-2xl` (≈18px) meng-clip apapun yang masuk ke kurva sudut. Kalau konten full-bleed dengan padding < radius, glyph/selection bg di pojok ke-clip.
+
+**Fix (HIG-pattern)**: jangan taruh teks polos full-bleed. Pakai pola Finder/Settings — tiap item `rounded-lg` self-contained dengan inset dari tepi:
+
+```tsx
+<ScrollArea className="h-48 rounded-2xl border">
+  <div className="space-y-0.5 p-2">
+    {items.map(item => (
+      <div key={item} className="rounded-lg px-3 py-1.5 text-[13px] hover:bg-muted/60">
+        {item}
+      </div>
+    ))}
+  </div>
+</ScrollArea>
+```
+
+Item ber-inset 8px (`p-2` parent) → tidak pernah menyentuh kurva sudut. Bonus: pola item-rounded match macOS Finder/Settings, lebih HIG dari list full-bleed.
+
+**Aturan umum**: kalau parent punya `rounded-*` + `overflow-hidden`, inner content harus inset ≥ corner radius. Lebih aman: bikin tiap item rounded sendiri.
+

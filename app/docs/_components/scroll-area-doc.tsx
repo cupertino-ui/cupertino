@@ -12,15 +12,25 @@ export function ScrollAreaDoc() {
       code={`import { ScrollArea } from "@/components/ui/scroll-area"
 
 <ScrollArea className="h-48 rounded-2xl border">
-  <div className="p-4">
-    {items.map(item => <div key={item}>{item}</div>)}
+  <div className="space-y-0.5 p-2">
+    {items.map(item => (
+      <div
+        key={item}
+        className="rounded-lg px-3 py-1.5 text-[13px] hover:bg-muted/60"
+      >
+        {item}
+      </div>
+    ))}
   </div>
 </ScrollArea>`}
       preview={
         <ScrollArea className="h-48 w-full max-w-xs rounded-2xl border border-border">
-          <div className="space-y-2 p-4">
+          <div className="space-y-0.5 p-2">
             {tags.map((tag) => (
-              <div key={tag} className="text-[13px] text-muted-foreground">
+              <div
+                key={tag}
+                className="rounded-lg px-3 py-1.5 text-[13px] text-foreground hover:bg-muted/60"
+              >
                 {tag}
               </div>
             ))}

@@ -111,7 +111,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
@@ -141,7 +140,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="sticky top-0 flex h-14 shrink-0 items-center gap-2 bg-background px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -165,7 +163,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
         <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border">
           <div className="flex items-center gap-2 px-3">
             <SidebarTrigger />
-            <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
@@ -198,7 +195,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -224,7 +220,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
@@ -254,7 +249,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -281,7 +275,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
         <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
@@ -313,7 +306,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
         <header className="flex h-16 shrink-0 items-center gap-2 px-4">
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
@@ -346,7 +338,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="sticky top-0 flex shrink-0 items-center gap-2 bg-background p-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
@@ -374,7 +365,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
         <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border px-4">
           <div className="flex flex-1 items-center gap-2">
             <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 h-4" />
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -400,7 +390,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 border-b border-border px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
@@ -434,7 +423,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="sticky top-0 flex h-16 shrink-0 items-center gap-2 border-b border-border px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -493,7 +481,6 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarInset>
         <header className="sticky top-0 flex h-14 shrink-0 items-center gap-2 border-b border-border px-4">
           <SidebarTrigger className="-ml-1" />
-          <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -515,7 +502,7 @@ const BLOCK_RENDERERS: Record<string, () => React.ReactNode> = {
       <SidebarProvider className="flex flex-col">
         <SiteHeader />
         <div className="flex flex-1">
-          <AppSidebar />
+          <AppSidebar className="top-(--header-height) h-[calc(100svh-var(--header-height))]!" />
           <SidebarInset>
             <div className="flex flex-1 flex-col gap-4 p-4">
               <div className="grid auto-rows-min gap-4 md:grid-cols-3">
