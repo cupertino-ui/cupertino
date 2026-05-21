@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Slot } from "radix-ui"
-import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-react"
 
 function Breadcrumb({ className, ...props }: React.ComponentProps<"nav">) {
   return (
@@ -20,7 +20,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
     <ol
       data-slot="breadcrumb-list"
       className={cn(
-        "flex flex-wrap items-center gap-1 text-[13px] text-muted-foreground",
+        "flex flex-wrap items-center gap-1.5 text-sm wrap-break-word text-muted-foreground",
         className
       )}
       {...props}
@@ -50,10 +50,7 @@ function BreadcrumbLink({
   return (
     <Comp
       data-slot="breadcrumb-link"
-      className={cn(
-        "rounded-md px-1 py-0.5 transition-colors hover:text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
-        className
-      )}
+      className={cn("transition-colors hover:text-foreground", className)}
       {...props}
     />
   )
@@ -66,7 +63,7 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn("px-1 font-medium text-foreground", className)}
+      className={cn("font-normal text-foreground", className)}
       {...props}
     />
   )
@@ -82,10 +79,12 @@ function BreadcrumbSeparator({
       data-slot="breadcrumb-separator"
       role="presentation"
       aria-hidden="true"
-      className={cn("text-muted-foreground/50 [&>svg]:size-3", className)}
+      className={cn("[&>svg]:size-3.5", className)}
       {...props}
     >
-      {children ?? <ChevronRightIcon />}
+      {children ?? (
+        <ChevronRightIcon />
+      )}
     </li>
   )
 }
@@ -100,12 +99,13 @@ function BreadcrumbEllipsis({
       role="presentation"
       aria-hidden="true"
       className={cn(
-        "flex size-6 items-center justify-center rounded-md hover:bg-muted [&>svg]:size-3.5",
+        "flex size-5 items-center justify-center [&>svg]:size-4",
         className
       )}
       {...props}
     >
-      <MoreHorizontalIcon />
+      <MoreHorizontalIcon
+      />
       <span className="sr-only">More</span>
     </span>
   )

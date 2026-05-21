@@ -3,19 +3,31 @@ export type Block = {
   name: string;
   title: string;
   description: string;
-  category: "login" | "signup" | "sidebar" | "featured";
+  category: "login" | "signup" | "sidebar" | "dashboard" | "featured";
   installCommand: string;
   status: "ready" | "planned";
 };
 
 export const CATEGORIES: { slug: string; label: string }[] = [
   { slug: "featured", label: "Featured" },
+  { slug: "dashboard", label: "Dashboard" },
   { slug: "sidebar", label: "Sidebar" },
   { slug: "login", label: "Login" },
   { slug: "signup", label: "Signup" },
 ];
 
 export const blocks: Block[] = [
+  // Dashboard
+  {
+    slug: "dashboard-01",
+    name: "Dashboard 01",
+    title: "Analytics dashboard",
+    description:
+      "Full-featured analytics dashboard with an inset sidebar, KPI cards, interactive area chart, and data table.",
+    category: "dashboard",
+    installCommand: "npx shadcn add dashboard-01",
+    status: "ready",
+  },
   // Login
   {
     slug: "login-01",

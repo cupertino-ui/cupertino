@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import {
   MonitorIcon,
   TabletIcon,
@@ -14,11 +14,13 @@ import { cn } from "@/lib/utils";
 
 type Device = "desktop" | "tablet" | "mobile";
 
-const DEVICE_WIDTHS: Record<Device, string> = {
-  desktop: "100%",
-  tablet: "768px",
-  mobile: "390px",
+const DEVICE_WIDTHS: Record<Device, number> = {
+  desktop: 1400,
+  tablet: 768,
+  mobile: 390,
 };
+
+const VISIBLE_HEIGHT = 650;
 
 export function BlockPreview({
   slug,
@@ -32,6 +34,23 @@ export function BlockPreview({
   const [mode, setMode] = useState<"preview" | "code">("preview");
   const [device, setDevice] = useState<Device>("desktop");
   const [iframeKey, setIframeKey] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useLayoutEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const measure = () => {
+      setScale(Math.min(1, el.offsetWidth / DEVICE_WIDTHS[device]));
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [device]);
+
+  const iframeWidth = DEVICE_WIDTHS[device];
+  const iframeHeight = scale ? Math.ceil(VISIBLE_HEIGHT / scale) : VISIBLE_HEIGHT;
 
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-background">
@@ -115,17 +134,27 @@ export function BlockPreview({
       </div>
 
       {mode === "preview" ? (
-        <div className="flex justify-center bg-muted/30 p-4">
+        <div className="bg-muted/30 p-4">
           <div
-            className="overflow-hidden rounded-xl border border-border bg-background transition-[width] duration-300"
-            style={{ width: DEVICE_WIDTHS[device], maxWidth: "100%" }}
+            ref={containerRef}
+            className="overflow-hidden rounded-xl border border-border bg-background"
+            style={{ height: VISIBLE_HEIGHT }}
           >
-            <iframe
-              key={iframeKey}
-              src={`/blocks/${slug}?embed=1`}
-              title={title}
-              className="h-[680px] w-full"
-            />
+            <div
+                style={{
+                  width: iframeWidth,
+                  height: iframeHeight,
+                  transform: `scale(${scale})`,
+                  transformOrigin: "top left",
+                }}
+              >
+                <iframe
+                  key={`${iframeKey}-${device}`}
+                  src={`/blocks/${slug}?embed=1`}
+                  title={title}
+                  style={{ width: "100%", height: "100%", border: "none", display: "block" }}
+                />
+            </div>
           </div>
         </div>
       ) : (
