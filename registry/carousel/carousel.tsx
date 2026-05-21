@@ -256,20 +256,24 @@ function CarouselDots({ className }: { className?: string }) {
   return (
     <div
       data-slot="carousel-dots"
-      className={cn("mt-3 flex items-center justify-center gap-1.5", className)}
+      className={cn("mt-3 flex items-center justify-center", className)}
     >
       {scrollSnaps.map((_, index) => (
         <button
           key={index}
           aria-label={`Go to slide ${index + 1}`}
           onClick={() => api?.scrollTo(index)}
-          className={cn(
-            "h-1.5 rounded-full transition-all duration-200",
-            index === selectedIndex
-              ? "w-4 bg-foreground"
-              : "w-1.5 bg-foreground/25"
-          )}
-        />
+          className="flex h-11 min-w-6 items-center justify-center px-1 outline-none focus-visible:ring-2 focus-visible:ring-ring/50 rounded-full"
+        >
+          <span
+            className={cn(
+              "h-1.5 rounded-full transition-all duration-200 pointer-events-none",
+              index === selectedIndex
+                ? "w-4 bg-foreground"
+                : "w-1.5 bg-foreground/25"
+            )}
+          />
+        </button>
       ))}
     </div>
   )

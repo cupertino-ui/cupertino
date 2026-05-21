@@ -36,7 +36,7 @@ function ResizableHandle({
     <ResizablePrimitive.Separator
       data-slot="resizable-handle"
       className={cn(
-        "group/resizable relative flex w-px items-center justify-center bg-border/60 transition-all duration-200 hover:w-1 hover:bg-border focus-visible:w-1 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none data-[resize-handle-state=drag]:w-1 data-[resize-handle-state=drag]:bg-ring/50 aria-[orientation=horizontal]:h-px aria-[orientation=horizontal]:w-full aria-[orientation=horizontal]:hover:h-1 aria-[orientation=horizontal]:focus-visible:h-1 aria-[orientation=horizontal]:data-[resize-handle-state=drag]:h-1 [&[aria-orientation=horizontal]>div]:rotate-90",
+        "group/resizable relative flex w-px items-center justify-center bg-border/60 transition-all duration-200 hover:w-1 hover:bg-border focus-visible:w-1 focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:outline-none data-[resize-handle-state=drag]:w-1 data-[resize-handle-state=drag]:bg-ring/50 aria-[orientation=horizontal]:h-px aria-[orientation=horizontal]:w-full aria-[orientation=horizontal]:hover:h-1 aria-[orientation=horizontal]:focus-visible:h-1 aria-[orientation=horizontal]:data-[resize-handle-state=drag]:h-1 [&[aria-orientation=horizontal]>div]:rotate-90 before:absolute before:inset-y-0 before:-left-2.5 before:-right-2.5 aria-[orientation=horizontal]:before:inset-x-0 aria-[orientation=horizontal]:before:-top-2.5 aria-[orientation=horizontal]:before:-bottom-2.5",
         className
       )}
       {...props}

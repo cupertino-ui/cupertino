@@ -33,7 +33,9 @@ export function NavWorkspaces({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Workspaces</SidebarGroupLabel>
+      <SidebarGroupLabel className="text-[11px] font-medium uppercase tracking-[0.06em] text-muted-foreground">
+        Workspaces
+      </SidebarGroupLabel>
       <SidebarGroupContent>
         <SidebarMenu>
           {workspaces.map((workspace) => (

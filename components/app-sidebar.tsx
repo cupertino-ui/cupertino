@@ -176,12 +176,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <a href="#">
-                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <TerminalIcon className="size-4" />
+                <div className="flex aspect-square size-8 items-center justify-center rounded-[8px] bg-system-blue text-white shadow-sm">
+                  <TerminalIcon className="size-[18px]" strokeWidth={2} />
                 </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-medium">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                <div className="grid flex-1 text-left leading-tight">
+                  <span className="truncate text-[14px] font-semibold tracking-[-0.01em]">Acme Inc</span>
+                  <span className="truncate text-[12px] text-muted-foreground">Enterprise</span>
                 </div>
               </a>
             </SidebarMenuButton>

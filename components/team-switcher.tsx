@@ -39,10 +39,10 @@ export function TeamSwitcher({
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton className="w-fit px-1.5">
-              <div className="flex aspect-square size-5 items-center justify-center rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
+              <div className="flex aspect-square size-5 items-center justify-center rounded-[5px] bg-system-blue text-white">
                 {activeTeam.logo}
               </div>
-              <span className="truncate font-medium">{activeTeam.name}</span>
+              <span className="truncate text-[13.5px] font-semibold tracking-[-0.01em]">{activeTeam.name}</span>
               <ChevronDownIcon className="opacity-50" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>

@@ -20,7 +20,7 @@ export default async function BlocksPage({
   const { category } = await searchParams;
   const active = category && CATEGORIES.some((c) => c.slug === category)
     ? category
-    : "login";
+    : "featured";
 
   const list =
     active === "featured" ? blocks.filter((b) => b.status === "ready") : blocksByCategory(active);
@@ -45,7 +45,7 @@ export default async function BlocksPage({
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" asChild>
-                <a href="#browse">Browse Blocks</a>
+                <Link href="/blocks?category=sidebar#browse">Browse Blocks</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link href="/docs#components">View Components</Link>

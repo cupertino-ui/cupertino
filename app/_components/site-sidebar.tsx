@@ -5,7 +5,7 @@ export { DOC_NAV_GROUPS };
 
 export function SiteSidebar() {
   return (
-    <aside className="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-60 shrink-0 overflow-y-auto border-r border-border bg-background py-8 pr-4 pl-6 lg:block">
+    <aside className="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-60 shrink-0 overflow-y-auto border-r border-border bg-background py-8 pr-4 pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:block">
       <DocsNavList />
     </aside>
   );

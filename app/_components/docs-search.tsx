@@ -69,8 +69,12 @@ export function DocsSearch() {
 
   function select(href: string) {
     setOpen(false);
-    if (typeof window !== "undefined") {
-      window.location.assign(href.startsWith("#") ? href : `#${href}`);
+    if (typeof window === "undefined") return;
+    const hash = href.startsWith("#") ? href : `#${href}`;
+    if (window.location.pathname.startsWith("/docs")) {
+      window.location.assign(hash);
+    } else {
+      window.location.assign(`/docs${hash}`);
     }
   }
 
