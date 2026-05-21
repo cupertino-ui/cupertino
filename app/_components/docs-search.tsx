@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Dialog as DialogPrimitive } from "radix-ui";
 import { Kbd } from "@/components/ui/kbd";
-import { DOC_NAV_GROUPS } from "@/app/_components/site-sidebar";
+import { DOC_NAV_GROUPS } from "@/app/_components/docs-registry";
 import { cn } from "@/lib/utils";
 
 type Hit = { label: string; href: string; group: string };

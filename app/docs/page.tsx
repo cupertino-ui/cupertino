@@ -1,4 +1,6 @@
+import type * as React from "react";
 import { Showcase } from "@/app/_components/showcase";
+import { COMPONENT_SLUGS } from "@/app/_components/docs-registry";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -241,67 +243,67 @@ import {
 } from "@/components/ui/navigation-menu";
 
 export default function DocsPage() {
-  const componentDocs = [
-    AccordionDoc,
-    AlertDoc,
-    AlertDialogDoc,
-    AvatarDoc,
-    BreadcrumbDoc,
-    CheckboxDoc,
-    CollapsibleDoc,
-    DialogDoc,
-    DropdownMenuDoc,
-    HoverCardDoc,
-    PaginationDoc,
-    PopoverDoc,
-    ProgressDoc,
-    RadioGroupDoc,
-    ScrollAreaDoc,
-    SelectDoc,
-    SkeletonDoc,
-    SliderDoc,
-    TextareaDoc,
-    ToggleDoc,
-    ToggleGroupDoc,
-    BadgeDoc,
-    ButtonDoc,
-    CardDoc,
-    InputDoc,
-    InputGroupDoc,
-    KbdDoc,
-    LabelDoc,
-    SeparatorDoc,
-    SheetDoc,
-    SwitchDoc,
-    TabsDoc,
-    TooltipDoc,
-    CarouselDoc,
-    EmptyDoc,
-    SpinnerDoc,
-    TableDoc,
-    ResizableDoc,
-    AspectRatioDoc,
-    InputOTPDoc,
-    CalendarDoc,
-    DrawerDoc,
-    NavigationMenuDoc,
-    MenubarDoc,
-    ContextMenuDoc,
-    CommandDoc,
-    SonnerDoc,
-    ButtonGroupDoc,
-    FieldDoc,
-    ItemDoc,
-    NativeSelectDoc,
-    TypographyDoc,
-    ComboboxDoc,
-    SidebarDoc,
-    ChartDoc,
-    DirectionDoc,
-    DatePickerDoc,
-    DataTableDoc,
-    ToastDoc,
-  ].sort((a, b) => a.name.localeCompare(b.name));
+  const DOC_BY_SLUG: Record<string, () => React.JSX.Element> = {
+    accordion: AccordionDoc,
+    alert: AlertDoc,
+    "alert-dialog": AlertDialogDoc,
+    "aspect-ratio": AspectRatioDoc,
+    avatar: AvatarDoc,
+    badge: BadgeDoc,
+    breadcrumb: BreadcrumbDoc,
+    button: ButtonDoc,
+    "button-group": ButtonGroupDoc,
+    calendar: CalendarDoc,
+    card: CardDoc,
+    carousel: CarouselDoc,
+    chart: ChartDoc,
+    checkbox: CheckboxDoc,
+    collapsible: CollapsibleDoc,
+    combobox: ComboboxDoc,
+    command: CommandDoc,
+    "context-menu": ContextMenuDoc,
+    "data-table": DataTableDoc,
+    "date-picker": DatePickerDoc,
+    dialog: DialogDoc,
+    direction: DirectionDoc,
+    drawer: DrawerDoc,
+    "dropdown-menu": DropdownMenuDoc,
+    empty: EmptyDoc,
+    field: FieldDoc,
+    "hover-card": HoverCardDoc,
+    input: InputDoc,
+    "input-group": InputGroupDoc,
+    "input-otp": InputOTPDoc,
+    item: ItemDoc,
+    kbd: KbdDoc,
+    label: LabelDoc,
+    menubar: MenubarDoc,
+    "native-select": NativeSelectDoc,
+    "navigation-menu": NavigationMenuDoc,
+    pagination: PaginationDoc,
+    popover: PopoverDoc,
+    progress: ProgressDoc,
+    "radio-group": RadioGroupDoc,
+    resizable: ResizableDoc,
+    "scroll-area": ScrollAreaDoc,
+    select: SelectDoc,
+    separator: SeparatorDoc,
+    sheet: SheetDoc,
+    sidebar: SidebarDoc,
+    skeleton: SkeletonDoc,
+    slider: SliderDoc,
+    sonner: SonnerDoc,
+    spinner: SpinnerDoc,
+    switch: SwitchDoc,
+    table: TableDoc,
+    tabs: TabsDoc,
+    textarea: TextareaDoc,
+    toast: ToastDoc,
+    toggle: ToggleDoc,
+    "toggle-group": ToggleGroupDoc,
+    tooltip: TooltipDoc,
+    typography: TypographyDoc,
+  };
 
   return (
     <>
@@ -316,9 +318,10 @@ export default function DocsPage() {
         Components
       </h2>
       <div className="mt-6 space-y-16">
-        {componentDocs.map((ComponentDoc) => (
-          <ComponentDoc key={ComponentDoc.name} />
-        ))}
+        {COMPONENT_SLUGS.map((slug) => {
+          const ComponentDoc = DOC_BY_SLUG[slug];
+          return <ComponentDoc key={slug} />;
+        })}
       </div>
 
       {/* <OnThisPage /> */}
